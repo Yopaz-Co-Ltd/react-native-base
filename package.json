@@ -16,7 +16,8 @@
     "react-native": "0.65.1",
     "react-native-localization": "^2.1.7",
     "react-native-safe-area-context": "^3.3.0",
-    "react-native-screens": "^3.6.0"
+    "react-native-screens": "^3.6.0",
+    "react-native-svg": "^12.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -26,8 +27,10 @@
     "babel-jest": "^27.0.6",
     "eslint": "^7.32.0",
     "jest": "^27.0.6",
+    "metro-config": "^0.66.2",
     "metro-react-native-babel-preset": "^0.66.2",
     "react-native-codegen": "^0.0.7",
+    "react-native-svg-transformer": "^0.14.3",
     "react-test-renderer": "17.0.2"
   },
   "jest": {

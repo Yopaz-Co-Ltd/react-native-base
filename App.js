@@ -1,10 +1,10 @@
 import React from 'react'
 import {NavigationContainer} from '@react-navigation/native'
-import {createNativeStackNavigator} from '@react-navigation/native-stack'
-import WelcomeScreen from './app/screens/welcome/welcome.screen'
+import WelcomeScreen from './app/screens/main/welcome/welcome.screen'
 import ScreenNames from './app/configs/screen_names'
+import {createStackNavigator} from '@react-navigation/stack'
 
-const Stack = createNativeStackNavigator()
+const Stack = createStackNavigator()
 
 const App = () => {
   return (

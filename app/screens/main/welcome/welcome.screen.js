@@ -1,8 +1,8 @@
 import React from 'react'
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native'
-import colors from '../../resources/colors'
-import strings from '../../resources/strings'
-import CreateImage from '../../resources/images/create.svg'
+import colors from '../../../resources/colors'
+import strings from '../../../resources/strings'
+import CreateImage from '../../../resources/images/create.svg'
 
 const WelcomeScreen = () => {
   return (

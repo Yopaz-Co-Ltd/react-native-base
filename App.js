@@ -1,20 +1,60 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {NavigationContainer} from '@react-navigation/native'
-import WelcomeScreen from './app/screens/main/welcome/welcome.screen'
-import ScreenNames from './app/configs/screen_names'
-import {createStackNavigator} from '@react-navigation/stack'
+import {LogBox, View} from 'react-native'
+import {Context} from './app/context'
+import MainNavigator from './app/screens/main/mainNavigator'
+import AuthNavigator from './app/screens/auth/authNavigator'
+import Spinner from 'react-native-loading-spinner-overlay'
+import {REQUEST_TIMEOUT} from './app/configs/api'
+import {getIsLoggedIn} from './app/screens/auth/login/repository'
 
-const Stack = createStackNavigator()
+LogBox.ignoreLogs([
+  'RCTBridge required dispatch_sync to load RCTDevLoadingView. This may lead to deadlocks',
+])
 
 //todo re-config firebase crashlytics
 
 const App = () => {
+  const [loading, setLoading] = useState(false)
+  useEffect(() => {
+    if (!loading) {
+      return
+    }
+    setTimeout(() => {
+      setLoading(false)
+    }, REQUEST_TIMEOUT)
+  }, [loading])
+
+  const [isLoggedIn, setIsLoggedIn] = useState(null)
+  useEffect(() => {
+    getIsLoggedIn()
+      .then(isLogged => {
+        setIsLoggedIn(isLogged)
+      })
+      .catch(e => {
+        setIsLoggedIn(false)
+      })
+  }, [])
+
+  if (isLoggedIn === null) {
+    return null
+  }
+
+  const contextValues = {
+    setLoading,
+    setIsLoggedIn,
+  }
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name={ScreenNames.WELCOME} component={WelcomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Context.Provider value={contextValues}>
+      <NavigationContainer>
+        {isLoggedIn === true ? <MainNavigator /> : <AuthNavigator />}
+      </NavigationContainer>
+      {loading ? (
+        <View>
+          <Spinner visible={loading} />
+        </View>
+      ) : null}
+    </Context.Provider>
   )
 }
 

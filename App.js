@@ -6,6 +6,8 @@ import {createStackNavigator} from '@react-navigation/stack'
 
 const Stack = createStackNavigator()
 
+//todo re-config firebase crashlytics
+
 const App = () => {
   return (
     <NavigationContainer>

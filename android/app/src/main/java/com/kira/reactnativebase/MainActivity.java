@@ -1,4 +1,4 @@
-package com.reactnativebase;
+package com.kira.reactnativebase;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;

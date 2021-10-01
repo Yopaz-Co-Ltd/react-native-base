@@ -1,8 +1,22 @@
 import React from 'react'
-import {StyleSheet, Text, TouchableHighlight} from 'react-native'
+import {
+  StyleProp,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  ViewStyle,
+} from 'react-native'
 import colors from '../../resources/colors'
 
-const PositiveButton = props => {
+export type PositiveButtonProps = {
+  disabled?: boolean
+  style?: StyleProp<ViewStyle>
+  onPress: () => void
+  underlayColor?: string
+  title?: string
+}
+
+const PositiveButton = (props: PositiveButtonProps) => {
   return (
     <TouchableHighlight
       disabled={props.disabled ?? false}

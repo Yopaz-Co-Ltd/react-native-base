@@ -1,13 +1,44 @@
-import React from 'react'
-import {StyleSheet, Text, TextInput, View} from 'react-native'
-import colors from "../../resources/colors";
+import React, {Ref} from 'react'
+import {
+  KeyboardTypeOptions,
+  NativeSyntheticEvent,
+  ReturnKeyTypeOptions,
+  StyleProp,
+  StyleSheet,
+  Text,
+  TextInput,
+  TextInputFocusEventData,
+  TextInputSubmitEditingEventData,
+  TextStyle,
+  View,
+} from 'react-native'
+import colors from '../../resources/colors'
 
-const InputField = props => {
+export type InputFieldProps = {
+  label?: string
+  required?: boolean
+  multiline?: boolean
+  placeholder?: string
+  secureTextEntry?: boolean
+  editable?: boolean
+  value?: string
+  keyboardType?: KeyboardTypeOptions
+  reference?: Ref<any>
+  style?: StyleProp<TextStyle>
+  returnKeyType?: ReturnKeyTypeOptions
+  onSubmitEditing?: (
+    event: NativeSyntheticEvent<TextInputSubmitEditingEventData>,
+  ) => void
+  onFocus?: (event: NativeSyntheticEvent<TextInputFocusEventData>) => void
+  setValueState?: (text: string) => void
+}
+
+const InputField = (props: InputFieldProps) => {
   return (
     <View>
       {props.label !== undefined ? (
         <Text style={styles.label}>{`${props.label}${
-          props.required === true ? ' *' : ''
+          props.required ? ' *' : ''
         }`}</Text>
       ) : (
         <View />
@@ -19,7 +50,7 @@ const InputField = props => {
         style={[
           styles.input,
           props.style,
-          props.multiline === true ? {paddingTop: 16} : {},
+          props.multiline ? {paddingTop: 16} : {},
         ]}
         ref={props.reference}
         placeholder={props.placeholder}

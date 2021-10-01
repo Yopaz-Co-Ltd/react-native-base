@@ -25,13 +25,13 @@ const App = () => {
     }, REQUEST_TIMEOUT)
   }, [loading])
 
-  const [isLoggedIn, setIsLoggedIn] = useState(null)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   useEffect(() => {
     getIsLoggedIn()
       .then(isLogged => {
         setIsLoggedIn(isLogged)
       })
-      .catch(e => {
+      .catch(() => {
         setIsLoggedIn(false)
       })
   }, [])
@@ -40,14 +40,14 @@ const App = () => {
     return null
   }
 
-  const contextValues = {
-    setLoading,
-    setIsLoggedIn,
-  }
   return (
-    <Context.Provider value={contextValues}>
+    <Context.Provider
+      value={{
+        setLoading,
+        setIsLoggedIn,
+      }}>
       <NavigationContainer>
-        {isLoggedIn === true ? <MainNavigator /> : <AuthNavigator />}
+        {isLoggedIn ? <MainNavigator /> : <AuthNavigator />}
       </NavigationContainer>
       {loading ? (
         <View>

@@ -1,4 +1,4 @@
-const log = data => {
+const log = (data: any) => {
   console.log('data = ' + JSON.stringify(data))
 }
 

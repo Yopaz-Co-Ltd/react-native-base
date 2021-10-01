@@ -1,7 +1,7 @@
 import {saveIsLoggedIn, saveLocalUser} from '../../auth/login/repository'
 
 const logout = () =>
-  new Promise((resolve, reject) => {
+  new Promise<void>((resolve, reject) => {
     saveLocalUser({})
       .then(() => {
         saveIsLoggedIn(false)

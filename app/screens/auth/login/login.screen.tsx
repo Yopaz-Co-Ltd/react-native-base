@@ -10,15 +10,15 @@ import colors from '../../../resources/colors'
 import strings from '../../../resources/strings'
 import dimens from '../../../resources/dimens'
 import {isIOS} from '../../../resources/oss'
-import logo from '../../../resources/images/launcher_icon.jpeg'
+const logo = require('../../../resources/images/launcher_icon.jpeg')
 import {Context} from '../../../context'
 import {login} from './repository'
 import Toast from 'react-native-root-toast'
 import InputField from '../../../base/views/inputField'
 import PositiveButton from '../../../base/views/positiveButton'
 
-const LoginScreen = ({navigation}) => {
-  const passwordRef = useRef(null)
+const LoginScreen = () => {
+  const passwordRef = useRef<any>(null)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const {setLoading} = useContext(Context)
@@ -45,7 +45,7 @@ const LoginScreen = ({navigation}) => {
             onPress={() => {
               setLoading(true)
               login(username, password)
-                .then(data => {
+                .then(() => {
                   setLoading(false)
                   setIsLoggedIn(true)
                 })

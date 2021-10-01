@@ -1,13 +1,27 @@
 import React from 'react'
-import {StyleSheet, Text, TouchableOpacity} from 'react-native'
+import {
+  ColorPropType,
+  ColorValue,
+  StyleProp,
+  StyleSheet,
+  Text,
+  TextStyle,
+  TouchableOpacity
+} from "react-native";
 import colors from '../../resources/colors'
 
-const NegativeButton = props => {
+export type NegativeButtonProps = {
+  style?: StyleProp<TextStyle>
+  onPress?: () => void
+
+}
+
+const NegativeButton = (props: NegativeButtonProps) => {
   return (
     <TouchableOpacity
       style={[styles.root, props.style]}
       onPress={props.onPress}
-      underlayColor={colors.buttonPressing}>
+      underlayColor={'#ff0000'}>
       <Text style={styles.text}>{props.title}</Text>
     </TouchableOpacity>
   )

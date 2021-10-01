@@ -1,5 +1,5 @@
 import axios, {Method} from 'axios'
-import {LOCAL_USER_KEY} from '../screens/auth/login/repository'
+import {LOCAL_USER_KEY} from '@screens/auth/login/repository'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const badConfigError = 'Bad Config!'

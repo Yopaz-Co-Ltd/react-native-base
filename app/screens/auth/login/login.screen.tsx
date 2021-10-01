@@ -6,16 +6,16 @@ import {
   StyleSheet,
   View,
 } from 'react-native'
-import colors from '../../../resources/colors'
-import strings from '../../../resources/strings'
-import dimens from '../../../resources/dimens'
-import {isIOS} from '../../../resources/oss'
-const logo = require('../../../resources/images/launcher_icon.jpeg')
-import {Context} from '../../../context'
-import {login} from './repository'
+import {isIOS} from '@resources/oss'
 import Toast from 'react-native-root-toast'
-import InputField from '../../../base/views/inputField'
-import PositiveButton from '../../../base/views/positiveButton'
+import strings from '@resources/strings'
+import dimens from '@resources/dimens'
+import colors from '@resources/colors'
+import {Context} from '@app/context'
+import InputField from '@base/views/inputField'
+import PositiveButton from '@base/views/positiveButton'
+import {login} from '@screens/auth/login/repository'
+const logo = require('@resources/images/launcher_icon.jpeg')
 
 const LoginScreen = () => {
   const passwordRef = useRef<any>(null)

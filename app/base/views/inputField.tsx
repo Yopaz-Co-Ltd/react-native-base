@@ -12,7 +12,7 @@ import {
   TextStyle,
   View,
 } from 'react-native'
-import colors from '../../resources/colors'
+import colors from '@resources/colors'
 
 export type InputFieldProps = {
   label?: string

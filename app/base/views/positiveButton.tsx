@@ -6,7 +6,7 @@ import {
   TouchableHighlight,
   ViewStyle,
 } from 'react-native'
-import colors from '../../resources/colors'
+import colors from '@resources/colors'
 
 export type PositiveButtonProps = {
   disabled?: boolean

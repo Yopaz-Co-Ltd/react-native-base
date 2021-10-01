@@ -1,6 +1,6 @@
-import {serverEndPoint} from '../../../configs/api'
-import {callApi} from '../../../base/apiSupport'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import {callApi} from '@base/apiSupport'
+import {serverEndPoint} from '@configs/api'
 
 const LOCAL_USER_KEY = 'key.user'
 const IS_LOGGED_IN_KEY = 'key.is_logged_in'

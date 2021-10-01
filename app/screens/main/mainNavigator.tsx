@@ -1,8 +1,8 @@
 import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
-import ScreenNames from '../../configs/screen_names'
-import WelcomeScreen from './welcome/welcome.screen'
-import strings from '../../resources/strings'
+import ScreenNames from '@configs/screen_names'
+import WelcomeScreen from '@screens/main/welcome/welcome.screen'
+import strings from '@resources/strings'
 
 const MainStack = createStackNavigator()
 

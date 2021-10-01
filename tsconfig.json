@@ -9,7 +9,16 @@
     "moduleResolution": "node",
     "noEmit": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "@/*" :["./*"],
+      "@app/*": ["./app/*"],
+      "@resources/*": ["./app/resources/*"],
+      "@base/*": ["./app/base/*"],
+      "@configs/*": ["./app/configs/*"],
+      "@screens/*": ["./app/screens/*"],
+    }
   },
   "exclude": [
     "node_modules",

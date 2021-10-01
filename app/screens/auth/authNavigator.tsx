@@ -1,8 +1,8 @@
-import {createStackNavigator} from '@react-navigation/stack'
-import ScreenNames from '../../configs/screen_names'
-import LoginScreen from './login/login.screen'
-import strings from '../../resources/strings'
 import React from 'react'
+import {createStackNavigator} from '@react-navigation/stack'
+import ScreenNames from '@configs/screen_names'
+import LoginScreen from '@screens/auth/login/login.screen'
+import strings from '@resources/strings'
 
 const AuthStack = createStackNavigator()
 

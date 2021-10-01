@@ -1,4 +1,4 @@
-import {saveIsLoggedIn, saveLocalUser} from '../../auth/login/repository'
+import {saveIsLoggedIn, saveLocalUser} from '@screens/auth/login/repository'
 
 const logout = () =>
   new Promise<void>((resolve, reject) => {

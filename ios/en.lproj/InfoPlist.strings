@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  ReactNativeBase
+
+  Created by Doan Tien on 15/04/2022.
+  
+*/
+
+"NSCameraUsageDescription"="This app requires camera access to send image messages.";
+"NSPhotoLibraryUsageDescription"="This app requires photo library access to send image, video or audio messages.";

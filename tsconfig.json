@@ -16,7 +16,6 @@
       "@app/*": ["./app/*"],
       "@resources/*": ["./app/resources/*"],
       "@base/*": ["./app/base/*"],
-      "@configs/*": ["./app/configs/*"],
       "@screens/*": ["./app/screens/*"],
     }
   },

@@ -1,0 +1,91 @@
+fastlane_require 'dotenv'
+
+before_all do
+  Dotenv.overload('.env')
+end
+
+platform :android do
+  desc "Android App Build Develop"
+  lane :release_develop do |options|
+    messageUpload = "Upload new build"
+    if options[:message]
+       messageUpload = options[:message]
+    end
+
+    gradle(task: 'clean assembleDevelopRelease', project_dir: './android')
+
+    firebaseDistribution(
+       app: "1:394798053700:android:f10edb226c2e0bdf78bf11",
+       message: messageUpload,
+       groups: "android"
+    )
+  end
+
+  desc "Android App Build Product"
+    lane :release_product do |options|
+      gradle(task: 'clean assembleProductRelease', project_dir: './android')
+
+      firebaseDistribution(
+         app: "1:394798053700:android:79ecc00c3c0ddca978bf11",
+         groups: "android"
+      )
+    end
+end
+
+platform :ios do
+    desc "iOS App Develop"
+    lane :release_develop do |options|
+      messageUpload = "Upload new build"
+      if options[:message]
+          messageUpload = options[:message]
+      end
+
+      build_ios_app(
+        scheme: "Develop",
+        workspace: "./ios/ReactNativeBase.xcworkspace",
+        export_options: {
+          method: "ad-hoc",
+          signingStyle: "manual",
+          provisioningProfiles: {
+            "com.kira.reactnativebase" => "Yopaz_LineInsight_Adhoc"
+          }
+        }
+      )
+
+      firebaseDistribution(
+         app: "1:394798053700:ios:d2452ff7f9f5cccc78bf11",
+         message: messageUpload,
+         groups: "ios"
+      )
+    end
+
+    desc "iOS App Product"
+    lane :release_product do |options|
+      build_ios_app(
+        scheme: "Product",
+        workspace: "./ios/ReactNativeBase.xcworkspace",
+        export_options: {
+        method: "ad-hoc",
+        signingStyle: "manual",
+          provisioningProfiles: {
+            "jp.app.dothomes.hotelinsightcrm" => "HotelInsightCRM_Adhoc"
+          }
+        }
+      )
+
+      firebaseDistribution(
+         app: "1:394798053700:ios:1bdd7cb3c519e7c678bf11",
+         groups: "ios"
+      )
+    end
+end
+
+desc "Firebase Config"
+lane :firebaseDistribution do |options|
+    firebase_app_distribution(
+        app:  options[:app],
+        firebase_cli_token: ENV["FIREBASE_TOKEN"],
+        groups: options[:groups],
+        release_notes: options[:message]
+    )
+end

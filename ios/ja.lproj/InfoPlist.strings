@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+ ReactNativeBase
+
+  Created by Doan Tien on 15/04/2022.
+  
+*/
+
+"NSCameraUsageDescription"="イメージメッセージの送信にこのアプリのカメラへのアクセスを許可しますか";
+"NSPhotoLibraryUsageDescription"="イメージメッセージ、動画メッセージ、音声メッセージなどの送信にこのアプリのフォトライブラリへのアクセスを許可しますか";

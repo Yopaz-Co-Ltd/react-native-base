@@ -1,7 +1,11 @@
 package com.kira.reactnativebase;
 
 import android.os.Bundle;
+import android.os.Handler;
+
 import com.facebook.react.ReactActivity;
+
+import org.devio.rn.splashscreen.SplashScreen;
 
 public class MainActivity extends ReactActivity {
 
@@ -16,6 +20,8 @@ public class MainActivity extends ReactActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+    SplashScreen.show(this);
     super.onCreate(null);
+    new Handler().postDelayed(() -> SplashScreen.hide(MainActivity.this), 1000);
   }
 }

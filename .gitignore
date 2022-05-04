@@ -57,3 +57,7 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+fastlane/.env
+.env.develop
+.env.product
+*.hprof

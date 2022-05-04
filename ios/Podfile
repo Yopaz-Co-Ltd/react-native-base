@@ -3,6 +3,12 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '11.0'
 
+project 'ReactNativeBase',
+        'DevelopDebug' => :debug,
+        'DevelopRelease' => :release,
+        'ProductDebug' => :debug,
+        'ProductRelease' => :release
+
 target 'ReactNativeBase' do
   config = use_native_modules!
 
@@ -11,6 +17,10 @@ target 'ReactNativeBase' do
     # to enable hermes on iOS, change `false` to `true` and then install pods
     :hermes_enabled => false
   )
+
+
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
 
   target 'ReactNativeBaseTests' do
     inherit! :complete
@@ -23,10 +33,24 @@ target 'ReactNativeBase' do
   # you should disable the next line.
   use_flipper!()
 
+  ENVFILES = {
+    'DevelopDebug' => '$(PODS_ROOT)/../../.env.develop',
+    'DevelopRelease' => '$(PODS_ROOT)/../../.env.develop',
+    'ProductDebug' => '$(PODS_ROOT)/../../.env.product',
+    'ProductRelease' => '$(PODS_ROOT)/../../.env.product',
+  }
   post_install do |installer|
     react_native_post_install(installer)
       installer.pods_project.build_configurations.each do |config|
         config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
       end
+
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        if target.name == 'react-native-config'
+          config.build_settings['ENVFILE'] = ENVFILES[config.name]
+        end
+      end
+    end
   end
 end

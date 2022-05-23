@@ -1,2 +1,5 @@
 node_modules
 dist
+babel.config.js
+metro.config.js
+.eslintrc.js

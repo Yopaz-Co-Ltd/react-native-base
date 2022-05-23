@@ -9,7 +9,7 @@
     "ios_product": "npx react-native run-ios --configuration=ProductDebug --scheme=Product",
     "start": "npx react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "postversion": "npx react-native-version --never-amend"
   },
   "dependencies": {
@@ -55,11 +55,21 @@
     "@types/react": "^18.0.8",
     "@types/react-native": "^0.65.2",
     "@types/react-test-renderer": "^17.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.32.0",
-    "@typescript-eslint/parser": "^4.32.0",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "@typescript-eslint/typescript-estree": "^5.26.0",
     "axios-logger": "^2.6.0",
     "babel-jest": "^27.0.6",
-    "eslint": "^7.32.0",
+    "eslint": "^8.16.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-module-resolver": "^1.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-react-native": "^4.0.0",
     "jest": "^27.0.6",
     "metro-config": "^0.66.2",
     "metro-react-native-babel-preset": "^0.66.2",
@@ -68,9 +78,12 @@
     "react-native-version": "^4.0.0",
     "react-test-renderer": "17.0.2",
     "redux-devtools-extension": "^2.13.9",
-    "typescript": "^4.4.3"
+    "typescript": "^4.6.4"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "resolutions": {
+    "@types/react": "^18.0.8"
   }
 }

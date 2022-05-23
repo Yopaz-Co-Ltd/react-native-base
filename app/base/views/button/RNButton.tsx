@@ -3,7 +3,7 @@ import {StyleSheet, Text, TextStyle, TouchableOpacity} from 'react-native'
 import Colors from '@resources/Colors'
 import Typography from '@resources/Typography'
 
-const RNButton = ({title, onPress, style}: RNButtonProps) => {
+const RNButton = ({title, onPress, style}: RNButtonProps): JSX.Element => {
     return (
         <TouchableOpacity style={[styles.touch, style]} onPress={onPress}>
             <Text style={Typography.text18BoldWhite}>{title}</Text>
@@ -19,11 +19,11 @@ type RNButtonProps = {
 
 const styles = StyleSheet.create({
     touch: {
-        backgroundColor: Colors.primary,
         alignItems: 'center',
-        paddingTop: 16,
-        paddingBottom: 16,
+        backgroundColor: Colors.primary,
         borderRadius: 6,
+        paddingBottom: 16,
+        paddingTop: 16,
     },
 })
 

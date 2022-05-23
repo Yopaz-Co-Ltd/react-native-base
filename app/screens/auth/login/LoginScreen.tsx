@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react'
-import {SafeAreaView, ScrollView, StyleSheet, Text} from 'react-native'
+import {SafeAreaView, ScrollView, StyleSheet, Text, TextInput} from 'react-native'
 import Strings from '@resources/localization/Strings'
 import Colors from '@resources/Colors'
 import Dimens from '@resources/Dimens'
@@ -8,10 +8,11 @@ import actions from '@screens/auth/AuthActions'
 import RNTextInput from '@base/views/text-input/RNTextInput'
 import RNButton from '@base/views/button/RNButton'
 import RNImage from '@base/views/image/RNImage'
+import Images from '@resources/images/Images'
 
-const LoginScreen = () => {
+const LoginScreen = (): JSX.Element => {
     const dispatch = useDispatch()
-    const passwordRef = useRef<any>(null)
+    const passwordRef = useRef<TextInput>(null)
     const [email, setEmail] = useState<string>()
     const [password, setPassword] = useState<string>()
 
@@ -20,13 +21,13 @@ const LoginScreen = () => {
             <ScrollView style={styles.scrollView} scrollEnabled={false}>
                 {/*header*/}
                 <Text style={styles.header}>{Strings.login.appName}</Text>
-                <RNImage style={styles.loginIcon} source={require('@resources/images/login/login.png')} />
+                <RNImage style={styles.loginIcon} source={Images.login} />
                 <Text style={styles.signInText}>{Strings.login.login}</Text>
                 {/*email*/}
                 <RNTextInput
                     style={styles.email}
                     placeholder={Strings.login.emailPlaceholder}
-                    onSubmitEditing={() => passwordRef.current.focus()}
+                    onSubmitEditing={() => passwordRef?.current?.focus()}
                     keyboardType={'email-address'}
                     onChangeText={setEmail}
                 />
@@ -53,29 +54,29 @@ const LoginScreen = () => {
 }
 
 const styles = StyleSheet.create({
-    safeArea: {backgroundColor: Colors.white},
-    scrollView: {
-        height: Dimens.matchParent,
-        backgroundColor: Colors.white,
-    },
+    email: {marginEnd: 32, marginStart: 32, marginTop: 32},
     header: {
+        backgroundColor: Colors.primary,
         color: Colors.white,
         fontFamily: 'Nunito-Bold',
-        textAlign: 'center',
         fontSize: 18,
-        backgroundColor: Colors.primary,
-        paddingTop: 36,
         paddingBottom: 36,
+        paddingTop: 36,
+        textAlign: 'center',
     },
-    loginIcon: {width: 48, height: 48, alignSelf: 'center', marginTop: 16},
+    loginButton: {marginEnd: 32, marginStart: 32, marginTop: 32},
+    loginIcon: {alignSelf: 'center', height: 48, marginTop: 16, width: 48},
+    password: {marginEnd: 32, marginStart: 32, marginTop: 16},
+    safeArea: {backgroundColor: Colors.white},
+    scrollView: {
+        backgroundColor: Colors.white,
+        height: Dimens.matchParent,
+    },
     signInText: {
         fontSize: 18,
-        textAlign: 'center',
         marginTop: 16,
+        textAlign: 'center',
     },
-    email: {marginTop: 32, marginStart: 32, marginEnd: 32},
-    password: {marginTop: 16, marginStart: 32, marginEnd: 32},
-    loginButton: {marginTop: 32, marginStart: 32, marginEnd: 32},
 })
 
 export default LoginScreen

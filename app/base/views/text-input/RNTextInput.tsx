@@ -7,12 +7,14 @@ const RNTextInput = forwardRef((props: TextInputProps, ref: LegacyRef<TextInput>
     return <TextInput {...props} ref={ref} style={[Typography.text18RegularBlack, styles.input, props.style]} />
 })
 
+RNTextInput.displayName = 'RNTextInput'
+
 const styles = StyleSheet.create({
     input: {
-        padding: 12,
-        borderWidth: 1,
         borderColor: Colors.black,
         borderRadius: 6,
+        borderWidth: 1,
+        padding: 12,
     },
 })
 

@@ -8,18 +8,18 @@ const Fonts = {
 
 const Typography = StyleSheet.create({
     text14RegularBlack: {
-        fontFamily: Fonts.nunitoRegular,
         color: Colors.black,
-    },
-    text18RegularBlack: {
-        fontSize: 18,
         fontFamily: Fonts.nunitoRegular,
-        color: Colors.black,
     },
     text18BoldWhite: {
-        fontSize: 18,
-        fontFamily: Fonts.nunitoBold,
         color: Colors.white,
+        fontFamily: Fonts.nunitoBold,
+        fontSize: 18,
+    },
+    text18RegularBlack: {
+        color: Colors.black,
+        fontFamily: Fonts.nunitoRegular,
+        fontSize: 18,
     },
 })
 

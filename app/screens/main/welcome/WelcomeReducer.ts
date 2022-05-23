@@ -1,6 +1,8 @@
-type WelcomeState = {}
+export type WelcomeState = {
+    someState?: string
+}
 
-const initialState = {}
+const initialState: WelcomeState = {}
 
 const WelcomeReducer = (state: WelcomeState = initialState): WelcomeState => {
     return state

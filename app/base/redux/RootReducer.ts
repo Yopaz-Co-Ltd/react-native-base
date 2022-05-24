@@ -1,20 +1,24 @@
 import {combineReducers} from 'redux'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import {persistReducer} from 'redux-persist'
-import AuthReducer from '@screens/auth/AuthReducer'
-import {store} from '@base/redux/ConfigureStore'
-import AppReducer from '@screens/AppReducer'
-import MainReducer from '@screens/main/MainReducer'
+import AuthReducer, {AuthState} from '@screens/auth/AuthReducer'
+import AppReducer, {AppState} from '@screens/AppReducer'
+import MainReducer, {MainState} from '@screens/main/MainReducer'
+import {PersistConfig} from 'redux-persist/es/types'
 
-export type RootState = ReturnType<typeof store.getState>
+export interface RootState {
+    app: AppState
+    auth: AuthState
+    main: MainState
+}
 
-const authPersistConfig: any = {
+const authPersistConfig: PersistConfig<AuthState> = {
     key: 'auth',
     storage: AsyncStorage,
     blacklist: [],
 }
 
-const RootReducer = combineReducers<RootState>({
+const RootReducer = combineReducers({
     app: AppReducer,
     auth: persistReducer(authPersistConfig, AuthReducer),
     main: MainReducer,

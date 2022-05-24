@@ -1,10 +1,11 @@
 import React from 'react'
 import Dimens from '@resources/Dimens'
 import Colors from '@resources/Colors'
+// eslint-disable-next-line import/default
 import Spinner from 'react-native-spinkit'
 import {StyleSheet, View} from 'react-native'
 
-const LoadingView = ({isLoading}: {isLoading: boolean}) => {
+const LoadingView = ({isLoading}: {isLoading: boolean}): JSX.Element | null => {
     if (!isLoading) {
         return null
     }
@@ -17,12 +18,12 @@ const LoadingView = ({isLoading}: {isLoading: boolean}) => {
 
 const styles = StyleSheet.create({
     root: {
-        position: 'absolute',
-        width: Dimens.matchParent,
-        height: Dimens.matchParent,
-        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: Colors.modalDim,
+        height: Dimens.matchParent,
+        justifyContent: 'center',
+        position: 'absolute',
+        width: Dimens.matchParent,
     },
 })
 

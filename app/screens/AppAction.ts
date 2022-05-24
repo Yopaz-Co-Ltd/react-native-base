@@ -1,22 +1,16 @@
-import {Dispatch} from 'redux'
-import {Alert} from 'react-native'
-import Strings from '@resources/localization/Strings'
+import {AnyAction} from 'redux'
 
 const types = {
     SET_IS_LOADING: 'SET_IS_LOADING',
     SHOW_ERROR: 'SHOW_ERROR',
 }
 
-const setIsLoading = (isLoading: boolean): any => {
-    return async (dispatch: Dispatch) => {
-        dispatch({type: types.SET_IS_LOADING, payload: isLoading})
-    }
+const setIsLoading = (isLoading: boolean): AnyAction => {
+    return {type: types.SET_IS_LOADING, payload: isLoading}
 }
 
-const showError = (message: string): any => {
-    return async () => {
-        Alert.alert(Strings.error, message)
-    }
+const showError = (message: string): AnyAction => {
+    return {type: types.SHOW_ERROR, payload: message}
 }
 
 const actions = {

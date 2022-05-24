@@ -5,7 +5,7 @@ import WelcomeScreen from '@screens/main/welcome/WelcomeScreen'
 
 const MainStack = createStackNavigator()
 
-const MainNavigator = () => {
+const MainNavigator = (): JSX.Element => {
     return (
         <MainStack.Navigator>
             <MainStack.Screen name={ScreenNames.WELCOME} component={WelcomeScreen} />

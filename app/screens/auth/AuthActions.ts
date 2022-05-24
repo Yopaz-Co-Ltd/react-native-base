@@ -1,8 +1,10 @@
 import {Dispatch} from 'redux'
 import Api from '@base/api/Api'
 import Strings from '@resources/localization/Strings'
-import appActions from '@screens/AppAction'
+import AppAction from '@screens/AppAction'
 import Toast from 'react-native-root-toast'
+import axios, {AxiosError} from 'axios'
+import {BaseResponseModel} from '@base/api/BaseResponseModel'
 
 const types = {
     //LOGOUT is used to clear main state when logout
@@ -11,7 +13,7 @@ const types = {
 }
 
 const loadAccessToken = () => {
-    return async (dispatch: Dispatch) => {
+    return async (dispatch: Dispatch): Promise<void> => {
         try {
             const accessToken = await Api.getAccessToken()
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: accessToken})
@@ -21,11 +23,15 @@ const loadAccessToken = () => {
     }
 }
 
+type LoginResponseModel = {
+    accessToken?: string
+}
+
 const login = (email?: string, password?: string) => {
-    return async (dispatch: Dispatch) => {
-        dispatch(appActions.setIsLoading(true))
+    return async (dispatch: Dispatch): Promise<void> => {
+        dispatch(AppAction.setIsLoading(true))
         try {
-            const response = await Api.callApi({
+            const loginResponseModel = await Api.callApi<LoginResponseModel>({
                 method: 'post',
                 path: Api.PATHS.login,
                 body: {
@@ -33,37 +39,50 @@ const login = (email?: string, password?: string) => {
                     password: password,
                 },
             })
-            const accessToken = response.data.accessToken
-            dispatch({type: types.LOGOUT})
-            dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: accessToken})
-            dispatch(appActions.setIsLoading(false))
-            await Api.saveAccessToken(accessToken)
-        } catch (e: any) {
-            console.log(e)
-            dispatch(appActions.setIsLoading(false))
-            if (e?.response?.data?.message && e.response.status === Api.StatusCode.AUTHORIZATION) {
-                Toast.show(e?.response?.data?.message ?? '')
+            const accessToken = loginResponseModel?.accessToken
+            dispatch(AppAction.setIsLoading(false))
+            if (accessToken) {
+                dispatch({type: types.LOGOUT})
+                dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: accessToken})
+                await Api.saveAccessToken(accessToken)
             } else {
                 Toast.show(Strings.login.loginFailedMessage ?? '')
             }
+        } catch (e) {
+            dispatch(AppAction.setIsLoading(false))
+            if (axios.isAxiosError(e)) {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                const error: AxiosError<BaseResponseModel<LoginResponseModel>> = e
+                const message = error?.response?.data?.message
+                const status = error?.response?.status
+                if (message && status === Api.StatusCode.AUTHORIZATION) {
+                    Toast.show(message ?? '')
+                } else {
+                    Toast.show(Strings.login.loginFailedMessage ?? '')
+                }
+                return
+            }
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+            Toast.show(`${e}`)
         }
     }
 }
 
 const logout = () => {
-    return async (dispatch: Dispatch) => {
-        dispatch(appActions.setIsLoading(true))
+    return async (dispatch: Dispatch): Promise<void> => {
+        dispatch(AppAction.setIsLoading(true))
         try {
             await Api.callApi({
                 method: 'delete',
                 path: Api.PATHS.logout,
             })
         } catch (e) {
+            console.log(e)
         } finally {
             await Api.removeAccessToken()
             dispatch({type: types.LOGOUT})
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: undefined})
-            dispatch(appActions.setIsLoading(false))
+            dispatch(AppAction.setIsLoading(false))
         }
     }
 }

@@ -6,7 +6,7 @@ import Strings from '@resources/localization/Strings'
 
 const AuthStack = createStackNavigator()
 
-const AuthNavigator = () => {
+const AuthNavigator = (): JSX.Element => {
     return (
         <AuthStack.Navigator>
             <AuthStack.Screen

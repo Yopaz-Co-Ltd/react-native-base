@@ -6,7 +6,7 @@ import Typography from '@resources/Typography'
 import {useDispatch} from 'react-redux'
 import AuthActions from '@screens/auth/AuthActions'
 
-const WelcomeScreen = () => {
+const WelcomeScreen = (): JSX.Element => {
     const dispatch = useDispatch()
 
     return (
@@ -22,8 +22,8 @@ const WelcomeScreen = () => {
 }
 
 const styles = StyleSheet.create({
-    title: {alignSelf: 'center', marginTop: 16},
     logoutButton: {margin: 16},
+    title: {alignSelf: 'center', marginTop: 16},
 })
 
 export default WelcomeScreen

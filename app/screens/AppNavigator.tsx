@@ -10,7 +10,7 @@ import LoadingView from '@base/views/loading/LoadingView'
 import AuthSelector from '@screens/auth/AuthSelector'
 import AuthActions from '@screens/auth/AuthActions'
 
-const AppNavigator = () => {
+const AppNavigator = (): JSX.Element => {
     const dispatch = useDispatch()
 
     const accessToken = useSelector(AuthSelector.getLocalAccessToken)

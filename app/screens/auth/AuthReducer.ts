@@ -14,7 +14,7 @@ const AuthReducer = (state: AuthState = initialState, action: AnyAction): AuthSt
         case actions.types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE:
             return {
                 ...state,
-                accessToken: action.payload,
+                accessToken: typeof action.payload === 'string' ? action.payload : undefined,
             }
         default:
             return state

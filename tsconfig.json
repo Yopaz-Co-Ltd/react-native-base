@@ -55,7 +55,7 @@
     },
     "typeRoots": [
       "node_modules/@types",
-      "app/types"
+      "app/resources/types"
     ]
   },
   "exclude": [

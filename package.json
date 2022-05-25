@@ -13,7 +13,6 @@
     "postversion": "npx react-native-version --never-amend"
   },
   "dependencies": {
-    "@react-native-async-storage/async-storage": "^1.15.8",
     "@react-native-firebase/analytics": "^12.8.0",
     "@react-native-firebase/app": "^12.8.0",
     "@react-native-firebase/app-distribution": "^12.8.0",
@@ -32,6 +31,7 @@
     "react-native-fast-image": "^8.5.11",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-localization": "^2.1.7",
+    "react-native-mmkv": "^2.4.1",
     "react-native-permissions": "^3.3.1",
     "react-native-root-toast": "^3.2.1",
     "react-native-safe-area-context": "^3.3.0",

@@ -1137,13 +1137,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@react-native-async-storage/async-storage@^1.15.8":
-  version "1.15.17"
-  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.15.17.tgz#0dae263a52e476ffce871086f1fef5b8e44708eb"
-  integrity sha512-NQCFs47aFEch9kya/bqwdpvSdZaVRtzU7YB02L8VrmLSLpKgQH/1VwzFUBPcc1/JI1s3GU4yOLVrEbwxq+Fqcw==
-  dependencies:
-    merge-options "^3.0.4"
-
 "@react-native-community/cli-debugger-ui@^6.0.0-rc.0":
   version "6.0.0-rc.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-6.0.0-rc.0.tgz#774378626e4b70f5e1e2e54910472dcbaffa1536"
@@ -4822,11 +4815,6 @@ is-number@^7.0.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
-is-plain-obj@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-2.1.0.tgz#45e42e37fccf1f40da8e5f76ee21515840c09287"
-  integrity sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA==
-
 is-plain-object@^2.0.1, is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/is-plain-object/-/is-plain-object-2.0.4.tgz#2c163b3fafb1b606d9d17928f05c2a1c38e07677"
@@ -5969,13 +5957,6 @@ merge-deep@^3.0.2:
     arr-union "^3.1.0"
     clone-deep "^0.2.4"
     kind-of "^3.0.2"
-
-merge-options@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/merge-options/-/merge-options-3.0.4.tgz#84709c2aa2a4b24c1981f66c179fe5565cc6dbb7"
-  integrity sha512-2Sug1+knBjkaMsMgf1ctR1Ujx+Ayku4EdJN4Z+C2+JzoeF7A3OZ9KM2GY0CpQS51NR61LTurMJrRKPhSs3ZRTQ==
-  dependencies:
-    is-plain-obj "^2.1.0"
 
 merge-stream@^2.0.0:
   version "2.0.0"
@@ -7211,6 +7192,11 @@ react-native-localization@^2.1.7:
   integrity sha512-0WMe8AV3GqoFPhIVHHVI6RYcSbruCcFNVvzsJDQS6fR3pPakXNTxjju2cUOU0WMLBDmk2iTRdtthO1zjx5ot7w==
   dependencies:
     react-localization "^1.0.17"
+
+react-native-mmkv@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-mmkv/-/react-native-mmkv-2.4.1.tgz#9e6a29f55911be2b990776bfb961b4f118126153"
+  integrity sha512-sCH8nm7KmRnMzG6wNDfon8jw/mFUfVAEQed5258kpMc2LtEdK47P34GPCovTnEtogWX8z8RQZ5rEGGgty8srtA==
 
 react-native-permissions@^3.3.1:
   version "3.3.1"

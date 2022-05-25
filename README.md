@@ -18,3 +18,7 @@
    - iOS: Change splash image with splash.png, splash@2x.png, splash@3x.png in folder `ios/ReactNativeBase/Images.xcassets/splash.imageset`
    - Android: Open Android Studio, parse splash.svg to splash.xml (saved in drawables folder)
 6. Config multiple environment: https://morioh.com/p/ae25af711b30
+7. Choose alternative encrypted storage for Async Storage: 
+   - https://reactnative.dev/docs/security
+   - https://javascript.plainenglish.io/trending-storage-options-for-react-native-developers-8671fbffb686
+   - I choose https://github.com/mrousavy/react-native-mmkv, because it supports encryption, fast queries and sync functions.

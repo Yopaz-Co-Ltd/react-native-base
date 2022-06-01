@@ -7,6 +7,7 @@ import AppNavigator from '@screens/AppNavigator'
 //todo re-config firebase crashlytics
 
 const App = (): JSX.Element => {
+    console.log('a')
     return (
         <Provider store={store}>
             <PersistGate persistor={persistor}>

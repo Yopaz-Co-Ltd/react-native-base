@@ -1,0 +1,9 @@
+name: Distribute to Firebase Action
+on:
+  push:
+    branches: [master]
+jobs:
+  check-bats-verions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'good'

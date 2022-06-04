@@ -1,14 +1,18 @@
 import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
-import ScreenNames from '@screens/ScreenNames'
+import {WELCOME_SCREEN} from '@app/navigation/ScreenNames'
 import WelcomeScreen from '@screens/main/welcome/WelcomeScreen'
 
-const MainStack = createStackNavigator()
+export type MainStackParamList = {
+    [WELCOME_SCREEN]: undefined
+}
+
+const MainStack = createStackNavigator<MainStackParamList>()
 
 const MainNavigator = (): JSX.Element => {
     return (
         <MainStack.Navigator>
-            <MainStack.Screen name={ScreenNames.WELCOME} component={WelcomeScreen} />
+            <MainStack.Screen name={WELCOME_SCREEN} component={WelcomeScreen} />
         </MainStack.Navigator>
     )
 }

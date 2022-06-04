@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "postinstall": "npx pod-install",
     "android_develop": "npx react-native run-android --variant=DevelopDebug",
     "android_product": "npx react-native run-android --variant=ProductDebug --appId=jp.app.dothomes.hotelinsightcrm",
     "ios_develop": "npx react-native run-ios --configuration=DevelopDebug --scheme=Develop",

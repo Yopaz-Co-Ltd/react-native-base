@@ -1,16 +1,20 @@
 import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
-import ScreenNames from '@screens/ScreenNames'
 import LoginScreen from '@screens/auth/login/LoginScreen'
 import Strings from '@resources/localization/Strings'
+import {LOGIN_SCREEN} from '@app/navigation/ScreenNames'
 
-const AuthStack = createStackNavigator()
+export type AuthStackParamList = {
+    [LOGIN_SCREEN]: undefined
+}
+
+const AuthStack = createStackNavigator<AuthStackParamList>()
 
 const AuthNavigator = (): JSX.Element => {
     return (
         <AuthStack.Navigator>
             <AuthStack.Screen
-                name={ScreenNames.LOGIN}
+                name={LOGIN_SCREEN}
                 component={LoginScreen}
                 options={{
                     title: Strings.login.login,

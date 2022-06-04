@@ -1,7 +1,7 @@
 import {NavigationContainer} from '@react-navigation/native'
-import MainNavigator from '@screens/main/MainNavigator'
-import AuthNavigator from '@screens/auth/AuthNavigator'
-import {View} from 'react-native'
+import MainNavigator from '@app/navigation/main/MainNavigator'
+import AuthNavigator from '@app/navigation/auth/AuthNavigator'
+import {StyleSheet, View} from 'react-native'
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import appSelectors from '@app/redux/app/AppSelector'
@@ -25,7 +25,7 @@ const AppNavigator = (): JSX.Element => {
     }, [accessToken])
 
     return (
-        <View style={{height: Dimens.matchParent}}>
+        <View style={styles.root}>
             <NavigationContainer fallback={<LoadingView isLoading={true} />}>
                 {accessToken ? <MainNavigator /> : <AuthNavigator />}
             </NavigationContainer>
@@ -33,5 +33,9 @@ const AppNavigator = (): JSX.Element => {
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    root: {height: Dimens.matchParent},
+})
 
 export default AppNavigator

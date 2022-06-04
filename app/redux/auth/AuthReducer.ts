@@ -1,4 +1,4 @@
-import actions from '@screens/auth/AuthActions'
+import actions from '@app/redux/auth/AuthActions'
 import {AnyAction} from 'redux'
 
 export type AuthState = {

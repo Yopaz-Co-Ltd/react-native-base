@@ -4,11 +4,11 @@ import AuthNavigator from '@screens/auth/AuthNavigator'
 import {View} from 'react-native'
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import appSelectors from '@screens/AppSelector'
+import appSelectors from '@app/redux/app/AppSelector'
 import Dimens from '@resources/Dimens'
 import LoadingView from '@base/views/loading/LoadingView'
-import AuthSelector from '@screens/auth/AuthSelector'
-import AuthActions from '@screens/auth/AuthActions'
+import AuthSelector from '@app/redux/auth/AuthSelector'
+import AuthActions from '@app/redux/auth/AuthActions'
 
 const AppNavigator = (): JSX.Element => {
     const dispatch = useDispatch()

@@ -1,6 +1,6 @@
 import {AnyAction, combineReducers} from 'redux'
-import actions from '@screens/auth/AuthActions'
-import WelcomeReducer, {WelcomeState} from '@screens/main/welcome/WelcomeReducer'
+import actions from '@app/redux/auth/AuthActions'
+import WelcomeReducer, {WelcomeState} from '@app/redux/main/welcome/WelcomeReducer'
 
 export interface MainState {
     welcome: WelcomeState

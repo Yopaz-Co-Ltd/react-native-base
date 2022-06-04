@@ -1,7 +1,7 @@
 import {applyMiddleware, createStore, Store} from 'redux'
 import thunk from 'redux-thunk'
 import {persistStore} from 'redux-persist'
-import RootReducer, {RootState} from '@base/redux/RootReducer'
+import RootReducer, {RootState} from '@app/redux/RootReducer'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import {Persistor} from 'redux-persist/es/types'
 

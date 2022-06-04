@@ -4,7 +4,7 @@ import RNButton from '@base/views/button/RNButton'
 import Strings from '@resources/localization/Strings'
 import Typography from '@resources/Typography'
 import {useDispatch} from 'react-redux'
-import AuthActions from '@screens/auth/AuthActions'
+import AuthActions from '@app/redux/auth/AuthActions'
 
 const WelcomeScreen = (): JSX.Element => {
     const dispatch = useDispatch()

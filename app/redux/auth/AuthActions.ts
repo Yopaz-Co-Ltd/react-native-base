@@ -1,7 +1,7 @@
 import {Dispatch} from 'redux'
 import Api from '@base/api/Api'
 import Strings from '@resources/localization/Strings'
-import AppAction from '@screens/AppAction'
+import AppAction from '@app/redux/app/AppAction'
 import Toast from 'react-native-root-toast'
 import axios, {AxiosError} from 'axios'
 import {BaseResponseModel} from '@base/api/BaseResponseModel'
@@ -13,9 +13,9 @@ const types = {
 }
 
 const loadAccessToken = () => {
-    return async (dispatch: Dispatch): Promise<void> => {
+    return (dispatch: Dispatch) => {
         try {
-            const accessToken = await Api.getAccessToken()
+            const accessToken = Api.getAccessToken()
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: accessToken})
         } catch (e) {
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: undefined})
@@ -44,7 +44,7 @@ const login = (email?: string, password?: string) => {
             if (accessToken) {
                 dispatch({type: types.LOGOUT})
                 dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: accessToken})
-                await Api.saveAccessToken(accessToken)
+                Api.saveAccessToken(accessToken)
             } else {
                 Toast.show(Strings.login.loginFailedMessage ?? '')
             }
@@ -79,7 +79,7 @@ const logout = () => {
         } catch (e) {
             console.log(e)
         } finally {
-            await Api.removeAccessToken()
+            Api.removeAccessToken()
             dispatch({type: types.LOGOUT})
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: undefined})
             dispatch(AppAction.setIsLoading(false))

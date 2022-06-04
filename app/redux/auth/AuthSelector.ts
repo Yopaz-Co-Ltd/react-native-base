@@ -1,5 +1,5 @@
-import {RootState} from '@base/redux/RootReducer'
-import {AuthState} from '@screens/auth/AuthReducer'
+import {RootState} from '@app/redux/RootReducer'
+import {AuthState} from '@app/redux/auth/AuthReducer'
 import {createSelector} from 'reselect'
 
 const getAuthState = (rootState: RootState): AuthState => rootState.auth

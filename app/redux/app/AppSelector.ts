@@ -1,6 +1,6 @@
-import {RootState} from '@base/redux/RootReducer'
+import {RootState} from '../RootReducer'
 import {createSelector} from 'reselect'
-import {AppState} from '@screens/AppReducer'
+import {AppState} from '@app/redux/app/AppReducer'
 
 const getState = (state: RootState): AppState => state.app
 

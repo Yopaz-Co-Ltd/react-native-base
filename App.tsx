@@ -1,6 +1,6 @@
 import React from 'react'
 import {Provider} from 'react-redux'
-import {persistor, store} from '@base/redux/ConfigureStore'
+import {persistor, store} from '@app/redux/ConfigureStore'
 import {PersistGate} from 'redux-persist/integration/react'
 import AppNavigator from '@screens/AppNavigator'
 

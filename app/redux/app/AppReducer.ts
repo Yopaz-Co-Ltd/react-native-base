@@ -1,4 +1,4 @@
-import actions from '@screens/AppAction'
+import actions from '@app/redux/app/AppAction'
 import {AnyAction} from 'redux'
 import {Alert} from 'react-native'
 import Strings from '@resources/localization/Strings'

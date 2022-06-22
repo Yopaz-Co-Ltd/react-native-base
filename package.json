@@ -5,8 +5,8 @@
     "scripts": {
         "android_develop": "npx react-native run-android --variant=DevelopDebug",
         "android_product": "npx react-native run-android --variant=ProductDebug --appId=jp.app.dothomes.hotelinsightcrm",
-        "ios_develop": "npx react-native run-ios --configuration=DevelopDebug --scheme=Develop",
-        "ios_product": "npx react-native run-ios --configuration=ProductDebug --scheme=Product",
+        "ios_develop": "react-native run-ios --configuration=DevelopDebug --scheme=Develop",
+        "ios_product": "react-native run-ios --configuration=ProductDebug --scheme=Product",
         "start": "npx react-native start",
         "test": "jest",
         "lint": "eslint . --ext .js,.jsx,.ts,.tsx",

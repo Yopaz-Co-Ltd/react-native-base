@@ -4,7 +4,8 @@ import AuthReducer, {AuthState} from '@app/redux/auth/AuthReducer'
 import AppReducer, {AppState} from '@app/redux/app/AppReducer'
 import MainReducer, {MainState} from '@app/redux/main/MainReducer'
 import {PersistConfig} from 'redux-persist/es/types'
-import {ReduxStorage} from '@base/local-storage/LocalStorage'
+import {encryptTransform} from 'redux-persist-transform-encrypt'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export interface RootState {
     app: AppState
@@ -14,8 +15,14 @@ export interface RootState {
 
 const authPersistConfig: PersistConfig<AuthState> = {
     key: 'auth',
-    storage: ReduxStorage,
+    storage: AsyncStorage,
     blacklist: [],
+    transforms: [
+        encryptTransform({
+            secretKey: 'my-key',
+            onError: error => console.log('error', error),
+        }),
+    ],
 }
 
 const RootReducer = combineReducers({

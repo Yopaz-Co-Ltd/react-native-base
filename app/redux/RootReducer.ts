@@ -6,6 +6,7 @@ import MainReducer, {MainState} from '@app/redux/main/MainReducer'
 import {PersistConfig} from 'redux-persist/es/types'
 import {encryptTransform} from 'redux-persist-transform-encrypt'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import Config from 'react-native-config'
 
 export interface RootState {
     app: AppState
@@ -19,8 +20,7 @@ const authPersistConfig: PersistConfig<AuthState> = {
     blacklist: [],
     transforms: [
         encryptTransform({
-            secretKey: 'my-key',
-            onError: error => console.log('error', error),
+            secretKey: Config.ENCRYPTION_SECRET_KEY,
         }),
     ],
 }

@@ -14,14 +14,18 @@ export const setDataString = async (key: string, value: string) => {
     } catch (error) {}
 }
 
-export const getDataObject = async <T>(key: string): Promise<T | undefined> => {
+export const getDataObject = async <T>(key: string): Promise<T | undefined | null> => {
     try {
-        const value = (await AsyncStorage.getItem(key)) ?? ''
-        return Promise.resolve(JSON.parse(value) as T)
+        const value = await AsyncStorage.getItem(key)
+        if (value !== null) {
+            return Promise.resolve(JSON.parse(value) as T)
+        } else {
+            return null
+        }
     } catch (error) {}
 }
 
-export const setDataObject = async (key: string, value: string) => {
+export const setDataObject = async (key: string, value: any) => {
     try {
         await AsyncStorage.setItem(key, JSON.stringify(value))
     } catch (error) {}

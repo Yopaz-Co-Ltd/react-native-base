@@ -14,11 +14,10 @@ export const setDataString = async (key: string, value: string) => {
     } catch (error) {}
 }
 
-export const getDataObject = async (key: string) => {
+export const getDataObject = async <T>(key: string): Promise<T | undefined> => {
     try {
-        const value = await AsyncStorage.getItem(key)
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-        return value !== null ? JSON.parse(value) : null
+        const value = (await AsyncStorage.getItem(key)) ?? ''
+        return Promise.resolve(JSON.parse(value) as T)
     } catch (error) {}
 }
 

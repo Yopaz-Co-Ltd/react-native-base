@@ -1,10 +1,10 @@
-import {getDataString, removeData, setDataString} from '@base/local-storage/AsyncStorage'
 import Configs from 'react-native-config'
 import axios, {AxiosError, Method} from 'axios'
 import * as AxiosLogger from 'axios-logger'
 import {isAndroid} from '@base/common/Utils'
 import {BaseResponseModel} from '@base/api/BaseResponseModel'
 import Strings from '@resources/localization/Strings'
+import {ReduxStorage} from '@base/local-storage/LocalStorage'
 
 const SERVER_URL = `https://${Configs.SERVER_HOST}`
 const SERVER_END_POINT = `${SERVER_URL}/api/v1`
@@ -71,11 +71,11 @@ const getHeadersWithAuthorization = async (path: string) => {
     }
 }
 
-const saveAccessToken = (accessToken: string) => setDataString(ACCESS_TOKEN_KEY, accessToken)
+const saveAccessToken = (accessToken: string) => ReduxStorage.setItemString(ACCESS_TOKEN_KEY, accessToken)
 
-const getAccessToken = () => getDataString(ACCESS_TOKEN_KEY)
+const getAccessToken = () => ReduxStorage.getItemString(ACCESS_TOKEN_KEY)
 
-const removeAccessToken = () => removeData(ACCESS_TOKEN_KEY)
+const removeAccessToken = () => ReduxStorage.removeItem(ACCESS_TOKEN_KEY)
 
 // after creating form data, append body to form data
 const createFormDataForFile = (fileKey: string, fileUri: string, fileType: string): FormData => {

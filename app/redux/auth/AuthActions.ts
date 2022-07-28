@@ -92,7 +92,7 @@ const logout = () => {
         } catch (e) {
             console.log(e)
         } finally {
-            Api.removeAccessToken().catch(() => {})
+            Api.removeAccessToken()
             dispatch({type: types.LOGOUT})
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: undefined})
             dispatch(AppAction.setIsLoading(false))

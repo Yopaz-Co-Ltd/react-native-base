@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import {Dispatch} from 'redux'
 import Api from '@base/api/Api'
 import Strings from '@resources/localization/Strings'
@@ -10,16 +11,28 @@ const types = {
     //LOGOUT is used to clear main state when logout
     LOGOUT: 'LOGOUT',
     SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE: 'SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE',
+    TEST_PERSIST: 'TEST_PERSIST',
 }
 
 const loadAccessToken = () => {
     return (dispatch: Dispatch) => {
         try {
-            const accessToken = Api.getAccessToken()
-            dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: accessToken})
+            Api.getAccessToken()
+                .then(accessToken => {
+                    dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: accessToken})
+                })
+                .catch(() => {
+                    dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: undefined})
+                })
         } catch (e) {
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: undefined})
         }
+    }
+}
+
+const testPersist = () => {
+    return (dispatch: Dispatch) => {
+        dispatch({type: types.TEST_PERSIST})
     }
 }
 
@@ -44,7 +57,7 @@ const login = (email?: string, password?: string) => {
             if (accessToken) {
                 dispatch({type: types.LOGOUT})
                 dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: accessToken})
-                Api.saveAccessToken(accessToken)
+                Api.saveAccessToken(accessToken).catch(() => {})
             } else {
                 Toast.show(Strings.login.loginFailedMessage ?? '')
             }
@@ -79,7 +92,7 @@ const logout = () => {
         } catch (e) {
             console.log(e)
         } finally {
-            Api.removeAccessToken()
+            Api.removeAccessToken().catch(() => {})
             dispatch({type: types.LOGOUT})
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: undefined})
             dispatch(AppAction.setIsLoading(false))
@@ -92,6 +105,7 @@ const actions = {
     login,
     logout,
     loadAccessToken,
+    testPersist,
 }
 
 export default actions

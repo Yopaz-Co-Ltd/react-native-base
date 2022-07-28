@@ -1,10 +1,10 @@
+import {getDataString, removeData, setDataString} from '@base/local-storage/AsyncStorage'
 import Configs from 'react-native-config'
 import axios, {AxiosError, Method} from 'axios'
 import * as AxiosLogger from 'axios-logger'
 import {isAndroid} from '@base/common/Utils'
 import {BaseResponseModel} from '@base/api/BaseResponseModel'
 import Strings from '@resources/localization/Strings'
-import {LocalStorage} from '@base/local-storage/LocalStorage'
 
 const SERVER_URL = `https://${Configs.SERVER_HOST}`
 const SERVER_END_POINT = `${SERVER_URL}/api/v1`
@@ -34,7 +34,7 @@ axiosInstance.interceptors.response.use(AxiosLogger.responseLogger, e => {
 })
 
 const callApi = async <T>(config: ApiConfig): Promise<T | undefined> => {
-    const headers = getHeadersWithAuthorization(config.path)
+    const headers = await getHeadersWithAuthorization(config.path)
     if (config.additionalHeaders) {
         headers['Content-Type'] = config.additionalHeaders['Content-Type']
     }
@@ -51,7 +51,7 @@ const callApi = async <T>(config: ApiConfig): Promise<T | undefined> => {
     return Promise.resolve(response?.data?.data)
 }
 
-const getHeadersWithAuthorization = (path: string) => {
+const getHeadersWithAuthorization = async (path: string) => {
     const defaultHeader: Header = {
         Accept: '*/*',
     }
@@ -59,7 +59,7 @@ const getHeadersWithAuthorization = (path: string) => {
         return defaultHeader
     }
     try {
-        const accessToken = getAccessToken()
+        const accessToken = await getAccessToken()
         return accessToken
             ? {
                   Authorization: `Bearer ${accessToken}`,
@@ -71,11 +71,11 @@ const getHeadersWithAuthorization = (path: string) => {
     }
 }
 
-const saveAccessToken = (accessToken: string) => LocalStorage.set(ACCESS_TOKEN_KEY, accessToken)
+const saveAccessToken = (accessToken: string) => setDataString(ACCESS_TOKEN_KEY, accessToken)
 
-const getAccessToken = () => LocalStorage.getString(ACCESS_TOKEN_KEY)
+const getAccessToken = () => getDataString(ACCESS_TOKEN_KEY)
 
-const removeAccessToken = () => LocalStorage.delete(ACCESS_TOKEN_KEY)
+const removeAccessToken = () => removeData(ACCESS_TOKEN_KEY)
 
 // after creating form data, append body to form data
 const createFormDataForFile = (fileKey: string, fileUri: string, fileType: string): FormData => {

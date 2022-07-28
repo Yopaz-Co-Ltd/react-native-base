@@ -24,7 +24,7 @@ const formatDate = (inputDate?: string, inputFormat?: string, outPutFormat?: str
     return undefined
 }
 
-const encryptData = (data: string | CryptoJS.lib.WordArray) => {
+const encryptData = <T>(data: T) => {
     if (typeof data === 'string') {
         const ciphertext = CryptoJS.AES.encrypt(data, Config.ENCRYPTION_SECRET_KEY).toString()
         return ciphertext

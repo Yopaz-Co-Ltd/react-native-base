@@ -3,10 +3,18 @@ import {AnyAction} from 'redux'
 
 export type AuthState = {
     accessToken?: string
+    user: {
+        name: string
+        age: number
+    }
 }
 
 const initialState: AuthState = {
     accessToken: undefined,
+    user: {
+        name: 'john',
+        age: 25,
+    },
 }
 
 const AuthReducer = (state: AuthState = initialState, action: AnyAction): AuthState => {
@@ -15,6 +23,14 @@ const AuthReducer = (state: AuthState = initialState, action: AnyAction): AuthSt
             return {
                 ...state,
                 accessToken: typeof action.payload === 'string' ? action.payload : undefined,
+            }
+        case actions.types.TEST_PERSIST:
+            return {
+                ...state,
+                user: {
+                    name: state.user.name + '1',
+                    age: state.user.age + 1,
+                },
             }
         default:
             return state

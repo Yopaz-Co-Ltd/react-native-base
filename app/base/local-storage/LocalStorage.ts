@@ -1,26 +1,31 @@
-import {MMKV} from 'react-native-mmkv'
-import Configs from 'react-native-config'
+/* eslint-disable @typescript-eslint/no-empty-function */
+import {decryptData, encryptData} from '@app/base/common/Utils'
+import {removeData} from '@base/local-storage/AsyncStorage'
 import {Storage} from 'redux-persist/es/types'
-
-export const LocalStorage = new MMKV({
-    id: 'mmkv.default',
-    encryptionKey: Configs.LOCAL_STORAGE_ENCRYPTION_KEY,
-})
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export const ReduxStorage: Storage = {
     setItem: (key, value) => {
-        if (typeof value === 'string' || typeof value === 'boolean' || typeof value === 'number') {
-            LocalStorage.set(key, value)
-            return Promise.resolve(true)
-        }
-        return Promise.resolve(false)
+        const jsonValue = JSON.stringify(value)
+        AsyncStorage.setItem(key, encryptData(jsonValue)).catch(() => {})
+        return Promise.resolve(true)
     },
-    getItem: key => {
-        const value = LocalStorage.getString(key)
-        return Promise.resolve(value)
+    getItem: async key => {
+        try {
+            const value = await AsyncStorage.getItem(key)
+            if (value) {
+                const dataDecrypt = decryptData(value)
+                return Promise.resolve(JSON.parse(dataDecrypt))
+            }
+        } catch (e) {
+            console.log('error', e)
+        }
     },
     removeItem: key => {
-        LocalStorage.delete(key)
-        return Promise.resolve()
+        removeData(key)
+            .then(() => {
+                return Promise.resolve(true)
+            })
+            .catch(() => {})
     },
 }

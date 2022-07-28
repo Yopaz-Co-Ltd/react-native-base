@@ -3,18 +3,22 @@ import {SafeAreaView, ScrollView, StyleSheet, Text, TextInput} from 'react-nativ
 import Strings from '@resources/localization/Strings'
 import Colors from '@resources/Colors'
 import Dimens from '@resources/Dimens'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import actions from '@app/redux/auth/AuthActions'
 import RNTextInput from '@base/views/text-input/RNTextInput'
 import RNButton from '@base/views/button/RNButton'
 import RNImage from '@base/views/image/RNImage'
 import Images from '@resources/images/Images'
+import AuthSelector from '@app/redux/auth/AuthSelector'
 
 const LoginScreen = (): JSX.Element => {
     const dispatch = useDispatch()
     const passwordRef = useRef<TextInput>(null)
     const [email, setEmail] = useState<string>()
     const [password, setPassword] = useState<string>()
+
+    const getUserAuth = useSelector(AuthSelector.getUserAuth)
+    console.log('getUserAuth', getUserAuth)
 
     return (
         <SafeAreaView style={styles.safeArea}>
@@ -45,6 +49,13 @@ const LoginScreen = (): JSX.Element => {
                     title={Strings.login.login}
                     onPress={() => {
                         dispatch(actions.login(email, password))
+                    }}
+                    style={styles.loginButton}
+                />
+                <RNButton
+                    title={'Test persist'}
+                    onPress={() => {
+                        dispatch(actions.testPersist())
                     }}
                     style={styles.loginButton}
                 />

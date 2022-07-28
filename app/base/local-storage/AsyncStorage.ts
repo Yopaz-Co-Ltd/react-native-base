@@ -25,7 +25,7 @@ export const getDataObject = async <T>(key: string): Promise<T | undefined | nul
     } catch (error) {}
 }
 
-export const setDataObject = async (key: string, value: any) => {
+export const setDataObject = async <T>(key: string, value: T) => {
     try {
         await AsyncStorage.setItem(key, JSON.stringify(value))
     } catch (error) {}

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import {decryptData, encryptData} from '@app/base/common/Utils'
+import {decryptData, encryptData} from '@app/base/common/EncryptionUtils'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 interface StorageType {

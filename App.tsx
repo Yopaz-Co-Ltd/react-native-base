@@ -4,7 +4,7 @@ import {Provider} from 'react-redux'
 import {persistor, store} from '@app/redux/ConfigureStore'
 import {PersistGate} from 'redux-persist/integration/react'
 import AppNavigator from '@app/navigation/AppNavigator'
-import {decryptData, encryptData} from '@app/base/common/Utils'
+import {decryptData, encryptData} from '@app/base/common/EncryptionUtils'
 import {ReduxStorage} from '@app/base/local-storage/LocalStorage'
 
 //todo re-config firebase crashlytics

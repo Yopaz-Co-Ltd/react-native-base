@@ -4,7 +4,7 @@ import * as AxiosLogger from 'axios-logger'
 import {isAndroid} from '@base/common/Utils'
 import {BaseResponseModel} from '@base/api/BaseResponseModel'
 import Strings from '@resources/localization/Strings'
-import {ReduxStorage} from '@base/local-storage/LocalStorage'
+import {LocalStorage} from '@base/local-storage/LocalStorage'
 import Constants from '@base/common/Constants'
 
 const SERVER_URL = `https://${Configs.SERVER_HOST}`
@@ -73,11 +73,11 @@ const getHeadersWithAuthorization = async (path: string) => {
 }
 
 const saveAccessToken = (accessToken: string) =>
-    ReduxStorage.setItem(ACCESS_TOKEN_KEY, accessToken, Constants.TYPE_DATA_STRING)
+    LocalStorage.setItem(ACCESS_TOKEN_KEY, accessToken, Constants.TYPE_DATA_STRING)
 
-const getAccessToken = () => ReduxStorage.getItem(ACCESS_TOKEN_KEY, Constants.TYPE_DATA_STRING)
+const getAccessToken = () => LocalStorage.getItem(ACCESS_TOKEN_KEY, Constants.TYPE_DATA_STRING)
 
-const removeAccessToken = () => ReduxStorage.removeItem(ACCESS_TOKEN_KEY)
+const removeAccessToken = () => LocalStorage.removeItem(ACCESS_TOKEN_KEY)
 
 // after creating form data, append body to form data
 const createFormDataForFile = (fileKey: string, fileUri: string, fileType: string): FormData => {

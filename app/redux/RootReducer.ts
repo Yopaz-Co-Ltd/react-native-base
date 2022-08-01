@@ -4,7 +4,7 @@ import AuthReducer, {AuthState} from '@app/redux/auth/AuthReducer'
 import AppReducer, {AppState} from '@app/redux/app/AppReducer'
 import MainReducer, {MainState} from '@app/redux/main/MainReducer'
 import {PersistConfig} from 'redux-persist/es/types'
-import {ReduxStorage} from '@base/local-storage/LocalStorage'
+import {LocalStorage} from '@base/local-storage/LocalStorage'
 
 export interface RootState {
     app: AppState
@@ -14,7 +14,7 @@ export interface RootState {
 
 const authPersistConfig: PersistConfig<AuthState> = {
     key: 'auth',
-    storage: ReduxStorage,
+    storage: LocalStorage,
     blacklist: [],
 }
 

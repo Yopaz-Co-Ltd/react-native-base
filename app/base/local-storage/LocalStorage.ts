@@ -10,13 +10,10 @@ interface StorageType extends Storage {
     clearData(): Promise<boolean>
 }
 
-export const ReduxStorage: StorageType = {
+export const LocalStorage: StorageType = {
     setItem: async (key: string, value: unknown, type?: number): Promise<boolean> => {
         try {
-            await AsyncStorage.setItem(
-                key,
-                type === Constants.TYPE_DATA_STRING ? encryptData(value) : encryptData(JSON.stringify(value)),
-            )
+            await AsyncStorage.setItem(key, encryptData(value, type))
             return Promise.resolve(true)
         } catch (error) {
             return Promise.resolve(false)
@@ -25,10 +22,8 @@ export const ReduxStorage: StorageType = {
     getItem: async (key: string, type?: number): Promise<unknown> => {
         try {
             const value = await AsyncStorage.getItem(key)
-            if (value !== null) {
-                return Promise.resolve(
-                    type === Constants.TYPE_DATA_STRING ? decryptData(value) : JSON.parse(decryptData(value)),
-                )
+            if (value) {
+                return Promise.resolve(decryptData(value, type))
             }
             return Promise.resolve(value)
         } catch (error) {

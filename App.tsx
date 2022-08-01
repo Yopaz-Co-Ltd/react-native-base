@@ -5,7 +5,7 @@ import {persistor, store} from '@app/redux/ConfigureStore'
 import {PersistGate} from 'redux-persist/integration/react'
 import AppNavigator from '@app/navigation/AppNavigator'
 import {decryptData, encryptData} from '@app/base/common/EncryptionUtils'
-import {ReduxStorage} from '@app/base/local-storage/LocalStorage'
+import {LocalStorage} from '@app/base/local-storage/LocalStorage'
 import Constants from '@app/base/common/Constants'
 
 //todo re-config firebase crashlytics
@@ -31,7 +31,7 @@ const App = (): JSX.Element => {
         const testDecrypt = decryptData(testEncrypt)
         console.log('testEncrypt', testEncrypt)
         console.log('testDecrypt', testDecrypt)
-        ReduxStorage.setItem('@key1', 'data string', Constants.TYPE_DATA_STRING).catch(() => {})
+        LocalStorage.setItem('@key1', 'data string', Constants.TYPE_DATA_STRING).catch(() => {})
     })
 
     return (

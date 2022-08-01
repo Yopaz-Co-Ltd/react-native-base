@@ -5,6 +5,7 @@ import {isAndroid} from '@base/common/Utils'
 import {BaseResponseModel} from '@base/api/BaseResponseModel'
 import Strings from '@resources/localization/Strings'
 import {ReduxStorage} from '@base/local-storage/LocalStorage'
+import Constants from '@base/common/Constants'
 
 const SERVER_URL = `https://${Configs.SERVER_HOST}`
 const SERVER_END_POINT = `${SERVER_URL}/api/v1`
@@ -59,7 +60,7 @@ const getHeadersWithAuthorization = async (path: string) => {
         return defaultHeader
     }
     try {
-        const accessToken = await getAccessToken()
+        const accessToken = (await getAccessToken()) as string
         return accessToken
             ? {
                   Authorization: `Bearer ${accessToken}`,
@@ -71,9 +72,10 @@ const getHeadersWithAuthorization = async (path: string) => {
     }
 }
 
-const saveAccessToken = (accessToken: string) => ReduxStorage.setItemString(ACCESS_TOKEN_KEY, accessToken)
+const saveAccessToken = (accessToken: string) =>
+    ReduxStorage.setItem(ACCESS_TOKEN_KEY, accessToken, Constants.TYPE_DATA_STRING)
 
-const getAccessToken = () => ReduxStorage.getItemString(ACCESS_TOKEN_KEY)
+const getAccessToken = () => ReduxStorage.getItem(ACCESS_TOKEN_KEY, Constants.TYPE_DATA_STRING)
 
 const removeAccessToken = () => ReduxStorage.removeItem(ACCESS_TOKEN_KEY)
 

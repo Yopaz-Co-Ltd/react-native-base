@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import {Dispatch} from 'redux'
 import Api from '@base/api/Api'
 import Strings from '@resources/localization/Strings'
@@ -15,25 +14,19 @@ const types = {
 }
 
 const loadAccessToken = () => {
-    return (dispatch: Dispatch) => {
+    return async (dispatch: Dispatch) => {
         try {
-            Api.getAccessToken()
-                .then(accessToken => {
-                    dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: accessToken})
-                })
-                .catch(() => {
-                    dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: undefined})
-                })
+            const accessToken = await Api.getAccessToken()
+            dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: accessToken})
         } catch (e) {
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: undefined})
         }
     }
 }
 
+// todo remove fake function
 const testPersist = () => {
-    return (dispatch: Dispatch) => {
-        dispatch({type: types.TEST_PERSIST})
-    }
+    return {type: types.TEST_PERSIST}
 }
 
 type LoginResponseModel = {
@@ -57,7 +50,7 @@ const login = (email?: string, password?: string) => {
             if (accessToken) {
                 dispatch({type: types.LOGOUT})
                 dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: accessToken})
-                Api.saveAccessToken(accessToken).catch(() => {})
+                await Api.saveAccessToken(accessToken)
             } else {
                 Toast.show(Strings.login.loginFailedMessage ?? '')
             }
@@ -92,7 +85,7 @@ const logout = () => {
         } catch (e) {
             console.log(e)
         } finally {
-            Api.removeAccessToken()
+            await Api.removeAccessToken()
             dispatch({type: types.LOGOUT})
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: undefined})
             dispatch(AppAction.setIsLoading(false))

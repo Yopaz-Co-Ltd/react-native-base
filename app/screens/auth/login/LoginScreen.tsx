@@ -11,6 +11,7 @@ import RNImage from '@base/views/image/RNImage'
 import Images from '@resources/images/Images'
 import AuthSelector from '@app/redux/auth/AuthSelector'
 import {ReduxStorage} from '@app/base/local-storage/LocalStorage'
+import Constants from '@app/base/common/Constants'
 
 const LoginScreen = (): JSX.Element => {
     const dispatch = useDispatch()
@@ -21,18 +22,18 @@ const LoginScreen = (): JSX.Element => {
     const getUserAuth = useSelector(AuthSelector.getUserAuth)
 
     useEffect(() => {
+        // todo remove fake function
         console.log('getUserAuth', getUserAuth)
-        ReduxStorage.getItemString('@key1')
+        ReduxStorage.getItem('@key1', Constants.TYPE_DATA_STRING)
             .then(value => {
-                if (value) {
-                    console.log('value key 1', value)
-                }
+                console.log('value key 1', value)
             })
             .catch(e => {
                 console.log('e', e)
             })
     }, [getUserAuth])
     return (
+        // todo remove fake function
         <SafeAreaView style={styles.safeArea}>
             <ScrollView style={styles.scrollView} scrollEnabled={false}>
                 {/*header*/}

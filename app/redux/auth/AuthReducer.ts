@@ -3,6 +3,7 @@ import {AnyAction} from 'redux'
 
 export type AuthState = {
     accessToken?: string
+    // todo remove fake function
     user: {
         name: string
         age: number
@@ -11,6 +12,7 @@ export type AuthState = {
 
 const initialState: AuthState = {
     accessToken: undefined,
+    // todo remove fake function
     user: {
         name: 'john',
         age: 25,
@@ -24,6 +26,8 @@ const AuthReducer = (state: AuthState = initialState, action: AnyAction): AuthSt
                 ...state,
                 accessToken: typeof action.payload === 'string' ? action.payload : undefined,
             }
+
+        // todo remove fake function
         case actions.types.TEST_PERSIST:
             return {
                 ...state,

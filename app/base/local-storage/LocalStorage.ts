@@ -1,59 +1,49 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import {decryptData, encryptData} from '@app/base/common/EncryptionUtils'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import {Storage} from 'redux-persist/es/types'
+import Constants from '@base/common/Constants'
 
-interface StorageType {
-    getItem(key: string): Promise<string | null>
-    setItem(key: string, value: unknown): Promise<boolean>
-    removeItem(key: string): void
-    getItemString(key: string): Promise<string | null>
-    setItemString(key: string, value: string): Promise<boolean>
+interface StorageType extends Storage {
+    setItem(key: string, value: unknown, type?: number): Promise<boolean>
+    getItem(key: string, type?: number): Promise<unknown>
+    removeItem(key: string): Promise<boolean>
     clearData(): Promise<boolean>
 }
 
 export const ReduxStorage: StorageType = {
-    setItem: (key, value) => {
+    setItem: async (key: string, value: unknown, type?: number): Promise<boolean> => {
         try {
-            const jsonValue = JSON.stringify(value)
-            AsyncStorage.setItem(key, encryptData(jsonValue)).catch(() => {})
+            await AsyncStorage.setItem(
+                key,
+                type === Constants.TYPE_DATA_STRING ? encryptData(value) : encryptData(JSON.stringify(value)),
+            )
             return Promise.resolve(true)
         } catch (error) {
             return Promise.resolve(false)
         }
     },
-    getItem: async (key: string) => {
+    getItem: async (key: string, type?: number): Promise<unknown> => {
         try {
             const value = await AsyncStorage.getItem(key)
             if (value !== null) {
-                const dataDecrypt = decryptData(value)
-                return Promise.resolve(JSON.parse(dataDecrypt))
+                return Promise.resolve(
+                    type === Constants.TYPE_DATA_STRING ? decryptData(value) : JSON.parse(decryptData(value)),
+                )
             }
+            return Promise.resolve(value)
         } catch (error) {
             console.log('error', error)
         }
     },
-    removeItem: key => {
-        AsyncStorage.removeItem(key)
-            .then(() => Promise.resolve(true))
-            .catch(() => Promise.resolve(false))
-    },
-    setItemString: (key, value) => {
-        const jsonValue = JSON.stringify(value)
-        AsyncStorage.setItem(key, encryptData(jsonValue)).catch(() => {})
-        return Promise.resolve(true)
-    },
-    getItemString: async (key: string) => {
+    removeItem: async (key: string): Promise<boolean> => {
         try {
-            const value = await AsyncStorage.getItem(key)
-            if (value) {
-                const dataDecrypt = decryptData(value)
-                return Promise.resolve(JSON.parse(dataDecrypt))
-            }
-        } catch (e) {
-            console.log('error', e)
+            await AsyncStorage.removeItem(key)
+            return Promise.resolve(true)
+        } catch (error) {
+            return Promise.resolve(false)
         }
     },
-    clearData: async () => {
+    clearData: async (): Promise<boolean> => {
         try {
             await AsyncStorage.clear()
             return Promise.resolve(true)

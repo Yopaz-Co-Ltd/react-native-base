@@ -11,7 +11,6 @@ import RNImage from '@base/views/image/RNImage'
 import Images from '@resources/images/Images'
 import AuthSelector from '@app/redux/auth/AuthSelector'
 import {LocalStorage} from '@app/base/local-storage/LocalStorage'
-import Constants from '@app/base/common/Constants'
 
 const LoginScreen = (): JSX.Element => {
     const dispatch = useDispatch()
@@ -24,7 +23,7 @@ const LoginScreen = (): JSX.Element => {
     useEffect(() => {
         // todo remove fake function
         console.log('getUserAuth', getUserAuth)
-        LocalStorage.getItem('@key1', Constants.TYPE_DATA_STRING)
+        LocalStorage.getItem('@key1')
             .then(value => {
                 console.log('value key 1', value)
             })

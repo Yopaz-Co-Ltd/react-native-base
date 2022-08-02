@@ -1,29 +1,28 @@
 import {decryptData, encryptData} from '@app/base/common/EncryptionUtils'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import {Storage} from 'redux-persist/es/types'
-import Constants from '@base/common/Constants'
 
 interface StorageType extends Storage {
-    setItem(key: string, value: unknown, type?: number): Promise<boolean>
-    getItem(key: string, type?: number): Promise<unknown>
+    setItem(key: string, value: unknown): Promise<boolean>
+    getItem(key: string): Promise<unknown>
     removeItem(key: string): Promise<boolean>
     clearData(): Promise<boolean>
 }
 
 export const LocalStorage: StorageType = {
-    setItem: async (key: string, value: unknown, type?: number): Promise<boolean> => {
+    setItem: async (key: string, value: unknown): Promise<boolean> => {
         try {
-            await AsyncStorage.setItem(key, encryptData(value, type))
+            await AsyncStorage.setItem(key, encryptData(value))
             return Promise.resolve(true)
         } catch (error) {
             return Promise.resolve(false)
         }
     },
-    getItem: async (key: string, type?: number): Promise<unknown> => {
+    getItem: async (key: string): Promise<unknown> => {
         try {
             const value = await AsyncStorage.getItem(key)
             if (value) {
-                return Promise.resolve(decryptData(value, type))
+                return Promise.resolve(decryptData(value))
             }
             return Promise.resolve(value)
         } catch (error) {

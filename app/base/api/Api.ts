@@ -5,7 +5,6 @@ import {isAndroid} from '@base/common/Utils'
 import {BaseResponseModel} from '@base/api/BaseResponseModel'
 import Strings from '@resources/localization/Strings'
 import {LocalStorage} from '@base/local-storage/LocalStorage'
-import Constants from '@base/common/Constants'
 
 const SERVER_URL = `https://${Configs.SERVER_HOST}`
 const SERVER_END_POINT = `${SERVER_URL}/api/v1`
@@ -72,10 +71,9 @@ const getHeadersWithAuthorization = async (path: string) => {
     }
 }
 
-const saveAccessToken = (accessToken: string) =>
-    LocalStorage.setItem(ACCESS_TOKEN_KEY, accessToken, Constants.TYPE_DATA_STRING)
+const saveAccessToken = (accessToken: string) => LocalStorage.setItem(ACCESS_TOKEN_KEY, accessToken)
 
-const getAccessToken = () => LocalStorage.getItem(ACCESS_TOKEN_KEY, Constants.TYPE_DATA_STRING)
+const getAccessToken = () => LocalStorage.getItem(ACCESS_TOKEN_KEY)
 
 const removeAccessToken = () => LocalStorage.removeItem(ACCESS_TOKEN_KEY)
 

@@ -21,6 +21,6 @@
 7. Choose alternative encrypted storage for Async Storage:
     - https://reactnative.dev/docs/security
     - https://javascript.plainenglish.io/trending-storage-options-for-react-native-developers-8671fbffb686
-    - I choose https://github.com/mrousavy/react-native-mmkv, because it supports encryption, fast queries and sync functions.
+    - https://github.com/mrousavy/react-native-mmkv
 8. Encrypt / Decrypt data, redux-persist encrypt
     - https://docs.google.com/document/d/1kH5cfmFXuMp9pgIo6G4NET6bPcf8-UVSS9Il0ZgLMXQ/edit#

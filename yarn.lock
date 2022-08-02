@@ -7487,11 +7487,6 @@ react-native-localization@^2.1.7:
   dependencies:
     react-localization "^1.0.17"
 
-react-native-mmkv@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/react-native-mmkv/-/react-native-mmkv-2.4.1.tgz#9e6a29f55911be2b990776bfb961b4f118126153"
-  integrity sha512-sCH8nm7KmRnMzG6wNDfon8jw/mFUfVAEQed5258kpMc2LtEdK47P34GPCovTnEtogWX8z8RQZ5rEGGgty8srtA==
-
 react-native-permissions@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-3.3.1.tgz#8a359d9c0531afcde2f642a459b48c4c1e3e8f2d"

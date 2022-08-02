@@ -10,17 +10,23 @@ const types = {
     //LOGOUT is used to clear main state when logout
     LOGOUT: 'LOGOUT',
     SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE: 'SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE',
+    TEST_PERSIST: 'TEST_PERSIST',
 }
 
 const loadAccessToken = () => {
-    return (dispatch: Dispatch) => {
+    return async (dispatch: Dispatch) => {
         try {
-            const accessToken = Api.getAccessToken()
+            const accessToken = (await Api.getAccessToken()) as string
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: accessToken})
         } catch (e) {
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: undefined})
         }
     }
+}
+
+// todo remove fake function
+const testPersist = () => {
+    return {type: types.TEST_PERSIST}
 }
 
 type LoginResponseModel = {
@@ -44,7 +50,7 @@ const login = (email?: string, password?: string) => {
             if (accessToken) {
                 dispatch({type: types.LOGOUT})
                 dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: accessToken})
-                Api.saveAccessToken(accessToken)
+                await Api.saveAccessToken(accessToken)
             } else {
                 Toast.show(Strings.login.loginFailedMessage ?? '')
             }
@@ -79,7 +85,7 @@ const logout = () => {
         } catch (e) {
             console.log(e)
         } finally {
-            Api.removeAccessToken()
+            await Api.removeAccessToken()
             dispatch({type: types.LOGOUT})
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: undefined})
             dispatch(AppAction.setIsLoading(false))
@@ -92,6 +98,7 @@ const actions = {
     login,
     logout,
     loadAccessToken,
+    testPersist,
 }
 
 export default actions

@@ -1,14 +1,16 @@
-import React, {useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import {SafeAreaView, ScrollView, StyleSheet, Text, TextInput} from 'react-native'
 import Strings from '@resources/localization/Strings'
 import Colors from '@resources/Colors'
 import Dimens from '@resources/Dimens'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import actions from '@app/redux/auth/AuthActions'
 import RNTextInput from '@base/views/text-input/RNTextInput'
 import RNButton from '@base/views/button/RNButton'
 import RNImage from '@base/views/image/RNImage'
 import Images from '@resources/images/Images'
+import AuthSelector from '@app/redux/auth/AuthSelector'
+import {LocalStorage} from '@app/base/local-storage/LocalStorage'
 
 const LoginScreen = (): JSX.Element => {
     const dispatch = useDispatch()
@@ -16,7 +18,21 @@ const LoginScreen = (): JSX.Element => {
     const [email, setEmail] = useState<string>()
     const [password, setPassword] = useState<string>()
 
+    const getUserAuth = useSelector(AuthSelector?.getUserAuth)
+
+    useEffect(() => {
+        // todo remove fake function
+        console.log('getUserAuth', getUserAuth)
+        LocalStorage.getItem('@key1')
+            .then(value => {
+                console.log('value key 1', value)
+            })
+            .catch(e => {
+                console.log('e', e)
+            })
+    }, [getUserAuth])
     return (
+        // todo remove fake function
         <SafeAreaView style={styles.safeArea}>
             <ScrollView style={styles.scrollView} scrollEnabled={false}>
                 {/*header*/}
@@ -45,6 +61,13 @@ const LoginScreen = (): JSX.Element => {
                     title={Strings.login.login}
                     onPress={() => {
                         dispatch(actions.login(email, password))
+                    }}
+                    style={styles.loginButton}
+                />
+                <RNButton
+                    title={'Test persist'}
+                    onPress={() => {
+                        dispatch(actions.testPersist())
                     }}
                     style={styles.loginButton}
                 />

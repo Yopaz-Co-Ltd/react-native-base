@@ -1,26 +1,48 @@
-import {MMKV} from 'react-native-mmkv'
-import Configs from 'react-native-config'
+import {decryptData, encryptData} from '@app/base/common/EncryptionUtils'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import {Storage} from 'redux-persist/es/types'
 
-export const LocalStorage = new MMKV({
-    id: 'mmkv.default',
-    encryptionKey: Configs.LOCAL_STORAGE_ENCRYPTION_KEY,
-})
+interface StorageType extends Storage {
+    setItem(key: string, value: unknown): Promise<boolean>
+    getItem(key: string): Promise<unknown>
+    removeItem(key: string): Promise<boolean>
+    clearData(): Promise<boolean>
+}
 
-export const ReduxStorage: Storage = {
-    setItem: (key, value) => {
-        if (typeof value === 'string' || typeof value === 'boolean' || typeof value === 'number') {
-            LocalStorage.set(key, value)
+export const LocalStorage: StorageType = {
+    setItem: async (key: string, value: unknown): Promise<boolean> => {
+        try {
+            await AsyncStorage.setItem(key, encryptData(value))
             return Promise.resolve(true)
+        } catch (error) {
+            return Promise.resolve(false)
         }
-        return Promise.resolve(false)
     },
-    getItem: key => {
-        const value = LocalStorage.getString(key)
-        return Promise.resolve(value)
+    getItem: async (key: string): Promise<unknown> => {
+        try {
+            const value = await AsyncStorage.getItem(key)
+            if (value) {
+                return Promise.resolve(decryptData(value))
+            }
+            return Promise.resolve(value)
+        } catch (error) {
+            console.log('error', error)
+        }
     },
-    removeItem: key => {
-        LocalStorage.delete(key)
-        return Promise.resolve()
+    removeItem: async (key: string): Promise<boolean> => {
+        try {
+            await AsyncStorage.removeItem(key)
+            return Promise.resolve(true)
+        } catch (error) {
+            return Promise.resolve(false)
+        }
+    },
+    clearData: async (): Promise<boolean> => {
+        try {
+            await AsyncStorage.clear()
+            return Promise.resolve(true)
+        } catch (error) {
+            return Promise.resolve(false)
+        }
     },
 }

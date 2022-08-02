@@ -16,7 +16,7 @@ const types = {
 const loadAccessToken = () => {
     return async (dispatch: Dispatch) => {
         try {
-            const accessToken = await Api.getAccessToken()
+            const accessToken = (await Api.getAccessToken()) as string
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: accessToken})
         } catch (e) {
             dispatch({type: types.SET_LOADED_ACCESS_TOKEN_IN_REDUX_STORE, payload: undefined})

@@ -18,7 +18,7 @@ const LoginScreen = (): JSX.Element => {
     const [email, setEmail] = useState<string>()
     const [password, setPassword] = useState<string>()
 
-    const getUserAuth = useSelector(AuthSelector.getUserAuth)
+    const getUserAuth = useSelector(AuthSelector?.getUserAuth)
 
     useEffect(() => {
         // todo remove fake function

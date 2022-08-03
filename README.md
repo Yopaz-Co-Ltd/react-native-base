@@ -54,3 +54,11 @@
     - https://github.com/mrousavy/react-native-mmkv
 9. Encrypt / Decrypt data, redux-persist encrypt
     - https://docs.google.com/document/d/1kH5cfmFXuMp9pgIo6G4NET6bPcf8-UVSS9Il0ZgLMXQ/edit#
+9. Create DownloadFileUtils use react-native-fs
+    - https://github.com/itinance/react-native-fs
+    - download private:
+      android: use path DocumentDirectoryPath
+      ios: use path LibraryDirectoryPath
+    - download public:
+      android: use DownloadDirectoryPath (save folder download android)
+      ios: use path DocumentDirectoryPath and add two keys to Info.plist UIFileSharingEnabled and LSSupportsOpeningDocumentsInPlace should both be added and set to YES.

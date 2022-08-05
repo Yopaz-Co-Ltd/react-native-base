@@ -5,12 +5,14 @@ import Strings from '@resources/localization/Strings'
 import Typography from '@resources/Typography'
 import {useDispatch} from 'react-redux'
 import AuthActions from '@app/redux/auth/AuthActions'
+import Images from '@resources/images/Images'
 
 const WelcomeScreen = (): JSX.Element => {
     const dispatch = useDispatch()
 
     return (
         <View>
+            {Images.iconSetting}
             <Text style={[styles.title, Typography.text14RegularBlack]}>Welcome</Text>
             <RNButton
                 style={styles.logoutButton}

@@ -42,6 +42,7 @@
         "react-native-root-toast": "^3.2.1",
         "react-native-safe-area-context": "^3.3.0",
         "react-native-screens": "^3.6.0",
+        "react-native-size-matters": "^0.4.0",
         "react-native-spinkit": "^1.5.1",
         "react-native-splash-screen": "^3.3.0",
         "react-native-svg": "^12.1.1",

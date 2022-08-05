@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyleSheet, Text, TextStyle, TouchableOpacity} from 'react-native'
+import {StyleProp, StyleSheet, Text, TouchableOpacity, ViewStyle} from 'react-native'
 import Colors from '@resources/Colors'
 import Typography from '@resources/Typography'
 
@@ -14,7 +14,7 @@ const RNButton = ({title, onPress, style}: RNButtonProps): JSX.Element => {
 type RNButtonProps = {
     title: string
     onPress?: () => void
-    style?: TextStyle
+    style?: StyleProp<ViewStyle>
 }
 
 const styles = StyleSheet.create({

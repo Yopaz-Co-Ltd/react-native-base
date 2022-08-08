@@ -3,6 +3,7 @@ const en = {
     cancel: 'Cancel',
     back: 'Back',
     errorNetwork: 'Network Error!',
+    somethingWentWrong: 'Something went wrong!',
     datetimeFormat: {
         serverTimeStamp: 'yyyy-MM-DD hh:mm:ss Z',
         monthDate: 'MM/DD',

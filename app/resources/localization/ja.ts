@@ -3,6 +3,7 @@ const ja = {
     cancel: 'キャンセル',
     back: '戻る',
     errorNetwork: 'ネットワーク接続に失敗しました。',
+    somethingWentWrong: 'エラーが発生しました',
     datetimeFormat: {
         serverTimeStamp: 'yyyy-MM-dd hh:mm:ss Z',
         monthDate: 'MM/DD',

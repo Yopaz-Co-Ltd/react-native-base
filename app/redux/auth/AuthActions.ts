@@ -4,7 +4,9 @@ import Strings from '@resources/localization/Strings'
 import AppAction from '@app/redux/app/AppAction'
 import Toast from 'react-native-root-toast'
 import axios, {AxiosResponse} from 'axios'
-import {BaseResponseModel} from '@api/BaseResponseModel'
+import {BaseResponseModel} from '@api/models/BaseResponseModel'
+import AuthPaths from '@api/paths/auth/AuthPaths'
+import {LoginResponseModel} from '@api/models/login/LoginResponseModel'
 
 const types = {
     //LOGOUT is used to clear main state when logout
@@ -29,17 +31,13 @@ const testPersist = () => {
     return {type: types.TEST_PERSIST}
 }
 
-type LoginResponseModel = {
-    accessToken?: string
-}
-
 const login = (email?: string, password?: string) => {
     return async (dispatch: Dispatch): Promise<void> => {
         dispatch(AppAction.setIsLoading(true))
         try {
             const loginResponseModel = await Api.callApi<LoginResponseModel>({
                 method: 'post',
-                path: Api.PATHS.login,
+                path: AuthPaths.login,
                 body: {
                     email: email,
                     password: password,
@@ -80,7 +78,7 @@ const logout = () => {
         try {
             await Api.callApi({
                 method: 'delete',
-                path: Api.PATHS.logout,
+                path: AuthPaths.logout,
             })
         } catch (e) {
             console.log(e)

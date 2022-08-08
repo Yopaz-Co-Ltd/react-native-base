@@ -1,10 +1,10 @@
 import {Dispatch} from 'redux'
-import Api from '@base/api/Api'
+import Api from '@api/Api'
 import Strings from '@resources/localization/Strings'
 import AppAction from '@app/redux/app/AppAction'
 import Toast from 'react-native-root-toast'
-import axios, {AxiosError} from 'axios'
-import {BaseResponseModel} from '@base/api/BaseResponseModel'
+import axios, {AxiosResponse} from 'axios'
+import {BaseResponseModel} from '@api/BaseResponseModel'
 
 const types = {
     //LOGOUT is used to clear main state when logout
@@ -57,10 +57,10 @@ const login = (email?: string, password?: string) => {
         } catch (e) {
             dispatch(AppAction.setIsLoading(false))
             if (axios.isAxiosError(e)) {
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                const error: AxiosError<BaseResponseModel<LoginResponseModel>> = e
-                const message = error?.response?.data?.message
-                const status = error?.response?.status
+                const response = e?.response as AxiosResponse<BaseResponseModel<LoginResponseModel>>
+                const data = response?.data
+                const message = data?.message
+                const status = response?.status
                 if (message && status === Api.StatusCode.AUTHORIZATION) {
                     Toast.show(message ?? '')
                 } else {

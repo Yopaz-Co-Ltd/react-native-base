@@ -8,6 +8,7 @@ module.exports = {
             '@resources': path.resolve(__dirname, './app/resources'),
             '@base': path.resolve(__dirname, './app/base'),
             '@screens': path.resolve(__dirname, './app/screens'),
+            '@api': path.resolve(__dirname, './app/api'),
         },
     },
 }

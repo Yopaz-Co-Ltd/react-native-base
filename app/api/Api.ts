@@ -2,7 +2,7 @@ import Configs from 'react-native-config'
 import axios, {AxiosError, Method} from 'axios'
 import * as AxiosLogger from 'axios-logger'
 import {isAndroid} from '@base/common/Utils'
-import {BaseResponseModel} from '@base/api/BaseResponseModel'
+import {BaseResponseModel} from '@app/api/BaseResponseModel'
 import Strings from '@resources/localization/Strings'
 import {LocalStorage} from '@base/local-storage/LocalStorage'
 

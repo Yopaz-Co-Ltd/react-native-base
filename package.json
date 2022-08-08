@@ -12,7 +12,8 @@
         "test": "jest",
         "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
         "postversion": "npx react-native-version --never-amend",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "runAdv3": "~/Library/Android/sdk/emulator/emulator -avd Pixel_3a_API_29"
     },
     "dependencies": {
         "@react-native-async-storage/async-storage": "^1.17.7",

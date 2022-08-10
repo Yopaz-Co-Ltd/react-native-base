@@ -16,7 +16,7 @@
         - Change android app icon: react-native set-icon --platform android --path app/resources/images/app_icon/app_icon_android.png
 5. Change splash screen
     - iOS: Change splash image with splash.png, splash@2x.png, splash@3x.png in folder `ios/ReactNativeBase/Images.xcassets/splash.imageset`
-    - Android: Open Android Studio, parse splash.svg to splash.xml (saved in drawables folder)
+    - Android: Open Android Studio, change splash.png saved in drawables folder (5 files)
 6. Config multiple environment: https://morioh.com/p/ae25af711b30
 7. Choose alternative encrypted storage for Async Storage:
     - https://reactnative.dev/docs/security

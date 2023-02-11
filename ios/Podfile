@@ -44,13 +44,5 @@ target 'ReactNativeBase' do
       installer.pods_project.build_configurations.each do |config|
         config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
       end
-
-    installer.pods_project.targets.each do |target|
-      target.build_configurations.each do |config|
-        if target.name == 'react-native-config'
-          config.build_settings['ENVFILE'] = ENVFILES[config.name]
-        end
-      end
-    end
   end
 end

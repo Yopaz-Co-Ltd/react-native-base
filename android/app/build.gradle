@@ -135,11 +135,11 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.kira.reactnativebase"
+        applicationId project.env.get("APPLICATION_ID")
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "0.0.1"
+        versionCode project.env.get("APPLICATION_BUILD").toInteger()
+        versionName project.env.get("APPLICATION_VERSION")
         resValue "string", "build_config_package", "com.kira.reactnativebase"
     }
     lintOptions {
@@ -177,23 +177,8 @@ android {
 
     flavorDimensions "default"
     productFlavors {
-        develop {
-            minSdkVersion rootProject.ext.minSdkVersion
-            applicationId 'com.kira.reactnativebase'
-            targetSdkVersion rootProject.ext.targetSdkVersion
-        }
-        product {
-            minSdkVersion rootProject.ext.minSdkVersion
-            applicationId 'com.kira.reactnativebase'
-            targetSdkVersion rootProject.ext.targetSdkVersion
-            versionCode 1
-            versionName "0.0.1"
-        }
-    }
-
-    sourceSets {
-        product.resources.srcDirs = ['src/product/res']
-        develop.resources.srcDirs = ['src/develop/res']
+        develop
+        product
     }
 
     // applicationVariants are e.g. debug, release

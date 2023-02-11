@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1090545170790-5u6bbofe1g7h1i5u67t1klmb345mhqcp.apps.googleusercontent.com</string>
+	<string>1090545170790-7qr7moe1b3s5qmtj5jb9lg5dsep5c18e.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1090545170790-5u6bbofe1g7h1i5u67t1klmb345mhqcp</string>
+	<string>com.googleusercontent.apps.1090545170790-7qr7moe1b3s5qmtj5jb9lg5dsep5c18e</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAzPF4A5Tlv78q-UhgLeAkZjos_LO8sEEI</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.kira.reactnativebase</string>
+	<string>com.kira.reactnativebase.product</string>
 	<key>PROJECT_ID</key>
 	<string>reactnativebase-84dbe</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1090545170790:ios:e3766ed3f7193216ca70a7</string>
+	<string>1:1090545170790:ios:dab4327b34781147ca70a7</string>
 </dict>
 </plist>

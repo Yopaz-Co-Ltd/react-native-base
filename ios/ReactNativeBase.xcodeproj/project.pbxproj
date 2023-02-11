@@ -33,12 +33,15 @@
 		00E356EE1AD99517003FC87E /* ReactNativeBaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactNativeBaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ReactNativeBaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeBaseTests.m; sourceTree = "<group>"; };
+		0C0685192992CAB10000A51B /* ReactNativeBaseProductDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseProductDebug.entitlements; path = ReactNativeBase/ReactNativeBaseProductDebug.entitlements; sourceTree = "<group>"; };
+		0C4D35152995C8CE00DEFFCD /* ReactNativeBaseProductRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseProductRelease.entitlements; path = ReactNativeBase/ReactNativeBaseProductRelease.entitlements; sourceTree = "<group>"; };
 		0C8355B727EB0848004A96E5 /* ReactNativeBase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ReactNativeBase.entitlements; path = ReactNativeBase/ReactNativeBase.entitlements; sourceTree = "<group>"; };
 		0CBFE65328092D280022FE8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0CBFE65528092D420022FE8E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0CE32747283C002A000D7CB4 /* ReactNativeBaseDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseDebug.entitlements; path = ReactNativeBase/ReactNativeBaseDebug.entitlements; sourceTree = "<group>"; };
 		0CE32748283C0033000D7CB4 /* ReactNativeBaseDevelopDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseDevelopDebug.entitlements; path = ReactNativeBase/ReactNativeBaseDevelopDebug.entitlements; sourceTree = "<group>"; };
 		0CE32749283C0038000D7CB4 /* ReactNativeBaseRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseRelease.entitlements; path = ReactNativeBase/ReactNativeBaseRelease.entitlements; sourceTree = "<group>"; };
+		0CF563A12991640900ADEDFC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		12FD8A5B2105E22A6896BBA0 /* Pods-ReactNativeBase-ReactNativeBaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBase-ReactNativeBaseTests.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeBase-ReactNativeBaseTests/Pods-ReactNativeBase-ReactNativeBaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* ReactNativeBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactNativeBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ReactNativeBase/AppDelegate.h; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 		13B07FAE1A68108700A75B9A /* ReactNativeBase */ = {
 			isa = PBXGroup;
 			children = (
+				0C4D35152995C8CE00DEFFCD /* ReactNativeBaseProductRelease.entitlements */,
+				0C0685192992CAB10000A51B /* ReactNativeBaseProductDebug.entitlements */,
 				0CE32749283C0038000D7CB4 /* ReactNativeBaseRelease.entitlements */,
 				0CE32748283C0033000D7CB4 /* ReactNativeBaseDevelopDebug.entitlements */,
 				0CE32747283C002A000D7CB4 /* ReactNativeBaseDebug.entitlements */,
@@ -168,6 +173,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				0CF563A12991640900ADEDFC /* Config.xcconfig */,
 				13B07FAE1A68108700A75B9A /* ReactNativeBase */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ReactNativeBaseTests */,
@@ -585,6 +591,7 @@
 		};
 		0C0439F727F1C2EE00451CFD /* DevelopDebug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CF563A12991640900ADEDFC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -664,6 +671,7 @@
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = ReactNativeBase/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APPLICATION_NAME)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -712,6 +720,7 @@
 		};
 		0C0439FA27F1C31400451CFD /* DevelopRelease */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CF563A12991640900ADEDFC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -783,6 +792,7 @@
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = ReactNativeBase/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APPLICATION_NAME)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -827,6 +837,7 @@
 		};
 		0C0439FD27F1C31D00451CFD /* ProductDebug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CF563A12991640900ADEDFC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -906,6 +917,7 @@
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = ReactNativeBase/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APPLICATION_NAME)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -954,6 +966,7 @@
 		};
 		0C043A0327F1C32C00451CFD /* ProductRelease */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CF563A12991640900ADEDFC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1025,6 +1038,7 @@
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = ReactNativeBase/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APPLICATION_NAME)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1272,7 +1286,7 @@
 				0C0439FC27F1C31400451CFD /* DevelopRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = DevelopRelease;
 		};
 		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ReactNativeBase" */ = {
 			isa = XCConfigurationList;
@@ -1285,7 +1299,7 @@
 				0C0439FB27F1C31400451CFD /* DevelopRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = DevelopRelease;
 		};
 		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ReactNativeBase" */ = {
 			isa = XCConfigurationList;
@@ -1298,7 +1312,7 @@
 				0C0439FA27F1C31400451CFD /* DevelopRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = DevelopRelease;
 		};
 /* End XCConfigurationList section */
 	};

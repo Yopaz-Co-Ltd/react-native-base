@@ -60,4 +60,9 @@ buck-out/
 fastlane/.env
 .env.develop
 .env.product
+.env
 *.hprof
+
+# react-native-config codegen
+ios/tmp.xcconfig
+

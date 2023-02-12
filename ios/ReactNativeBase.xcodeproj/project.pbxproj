@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* ReactNativeBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ReactNativeBaseTests.m */; };
+		0C661D0328A4FB800008262B /* wmelon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C661D0228A4FB800008262B /* wmelon.swift */; };
 		0CBFE65228092D280022FE8E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CBFE65428092D280022FE8E /* InfoPlist.strings */; };
 		0F86198B1AAD4A52AAEA4EE4 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D5B4D051716940AB98510816 /* Nunito-Regular.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -35,6 +36,8 @@
 		00E356F21AD99517003FC87E /* ReactNativeBaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeBaseTests.m; sourceTree = "<group>"; };
 		0C0685192992CAB10000A51B /* ReactNativeBaseProductDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseProductDebug.entitlements; path = ReactNativeBase/ReactNativeBaseProductDebug.entitlements; sourceTree = "<group>"; };
 		0C4D35152995C8CE00DEFFCD /* ReactNativeBaseProductRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseProductRelease.entitlements; path = ReactNativeBase/ReactNativeBaseProductRelease.entitlements; sourceTree = "<group>"; };
+		0C661D0128A4FB800008262B /* ReactNativeBase-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactNativeBase-Bridging-Header.h"; sourceTree = "<group>"; };
+		0C661D0228A4FB800008262B /* wmelon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wmelon.swift; sourceTree = "<group>"; };
 		0C8355B727EB0848004A96E5 /* ReactNativeBase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ReactNativeBase.entitlements; path = ReactNativeBase/ReactNativeBase.entitlements; sourceTree = "<group>"; };
 		0CAE46572998C049008901EC /* ReactNativeBaseDevelopRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseDevelopRelease.entitlements; path = ReactNativeBase/ReactNativeBaseDevelopRelease.entitlements; sourceTree = "<group>"; };
 		0CAE46582998C0DE008901EC /* ReactNativeBaseStagingDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseStagingDebug.entitlements; path = ReactNativeBase/ReactNativeBaseStagingDebug.entitlements; sourceTree = "<group>"; };
@@ -188,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				0CF563A12991640900ADEDFC /* Config.xcconfig */,
+				0C661D0228A4FB800008262B /* wmelon.swift */,
 				13B07FAE1A68108700A75B9A /* ReactNativeBase */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ReactNativeBaseTests */,
@@ -195,6 +199,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				01DA64B331A8173E308A904F /* Pods */,
 				1599D1C416D4455CA9DF2A22 /* Resources */,
+				0C661D0128A4FB800008262B /* ReactNativeBase-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -272,7 +277,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -526,6 +531,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				0C661D0328A4FB800008262B /* wmelon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +562,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 12FD8A5B2105E22A6896BBA0 /* Pods-ReactNativeBase-ReactNativeBaseTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -583,6 +590,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4073376F1E488F59679AE73D /* Pods-ReactNativeBase-ReactNativeBaseTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = ReactNativeBaseTests/Info.plist;
@@ -699,6 +707,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kira.reactnativebase;
 				PRODUCT_NAME = ReactNativeBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ReactNativeBase-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -709,6 +718,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 197D83FD9964AFCA204053A2 /* Pods-ReactNativeBase-ReactNativeBaseTests.developdebug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -820,6 +830,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kira.reactnativebase;
 				PRODUCT_NAME = ReactNativeBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ReactNativeBase-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -829,6 +840,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D9FA5A3DECBD4F23910B461A /* Pods-ReactNativeBase-ReactNativeBaseTests.developrelease.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = ReactNativeBaseTests/Info.plist;
@@ -945,6 +957,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kira.reactnativebase;
 				PRODUCT_NAME = ReactNativeBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ReactNativeBase-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -955,6 +968,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 57B094A5D53C49507D3AC55C /* Pods-ReactNativeBase-ReactNativeBaseTests.productdebug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1066,6 +1080,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kira.reactnativebase;
 				PRODUCT_NAME = ReactNativeBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ReactNativeBase-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1075,6 +1090,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 632B716F61656A9192F8A933 /* Pods-ReactNativeBase-ReactNativeBaseTests.productrelease.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = ReactNativeBaseTests/Info.plist;
@@ -1369,6 +1385,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kira.reactnativebase;
 				PRODUCT_NAME = ReactNativeBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ReactNativeBase-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1402,6 +1419,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kira.reactnativebase;
 				PRODUCT_NAME = ReactNativeBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ReactNativeBase-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "experimentalDecorators": true,
         "allowJs": true,
         /* Allow javascript files to be compiled. */
         "allowSyntheticDefaultImports": true,

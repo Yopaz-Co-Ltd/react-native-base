@@ -6,6 +6,8 @@ platform :ios, '11.0'
 project 'ReactNativeBase',
         'DevelopDebug' => :debug,
         'DevelopRelease' => :release,
+        'StagingDebug' => :debug,
+        'StagingRelease' => :release,
         'ProductDebug' => :debug,
         'ProductRelease' => :release
 
@@ -36,6 +38,8 @@ target 'ReactNativeBase' do
   ENVFILES = {
     'DevelopDebug' => '$(PODS_ROOT)/../../.env.develop',
     'DevelopRelease' => '$(PODS_ROOT)/../../.env.develop',
+    'StagingDebug' => '$(PODS_ROOT)/../../.env.release',
+    'StagingRelease' => '$(PODS_ROOT)/../../.env.release',
     'ProductDebug' => '$(PODS_ROOT)/../../.env.product',
     'ProductRelease' => '$(PODS_ROOT)/../../.env.product',
   }

@@ -5,8 +5,10 @@
     "scripts": {
         "postinstall": "cd ios && pod install && cd .. && npx jetifier",
         "android_develop": "npx react-native run-android --variant=DevelopDebug --appId=com.kira.reactnativebase.develop",
+        "android_staging": "npx react-native run-android --variant=StagingDebug --appId=com.kira.reactnativebase.staging",
         "android_product": "npx react-native run-android --variant=ProductDebug --appId=com.kira.reactnativebase.product",
         "ios_develop": "react-native run-ios --configuration=DevelopDebug --scheme=Develop",
+        "ios_staging": "react-native run-ios --configuration=StagingDebug --scheme=Staging",
         "ios_product": "react-native run-ios --configuration=ProductDebug --scheme=Product",
         "start": "npx react-native start",
         "test": "jest",

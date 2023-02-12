@@ -36,12 +36,16 @@
 		0C0685192992CAB10000A51B /* ReactNativeBaseProductDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseProductDebug.entitlements; path = ReactNativeBase/ReactNativeBaseProductDebug.entitlements; sourceTree = "<group>"; };
 		0C4D35152995C8CE00DEFFCD /* ReactNativeBaseProductRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseProductRelease.entitlements; path = ReactNativeBase/ReactNativeBaseProductRelease.entitlements; sourceTree = "<group>"; };
 		0C8355B727EB0848004A96E5 /* ReactNativeBase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ReactNativeBase.entitlements; path = ReactNativeBase/ReactNativeBase.entitlements; sourceTree = "<group>"; };
+		0CAE46572998C049008901EC /* ReactNativeBaseDevelopRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseDevelopRelease.entitlements; path = ReactNativeBase/ReactNativeBaseDevelopRelease.entitlements; sourceTree = "<group>"; };
+		0CAE46582998C0DE008901EC /* ReactNativeBaseStagingDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseStagingDebug.entitlements; path = ReactNativeBase/ReactNativeBaseStagingDebug.entitlements; sourceTree = "<group>"; };
+		0CAE46592998C0DF008901EC /* ReactNativeBaseStagingRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseStagingRelease.entitlements; path = ReactNativeBase/ReactNativeBaseStagingRelease.entitlements; sourceTree = "<group>"; };
 		0CBFE65328092D280022FE8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0CBFE65528092D420022FE8E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0CE32747283C002A000D7CB4 /* ReactNativeBaseDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseDebug.entitlements; path = ReactNativeBase/ReactNativeBaseDebug.entitlements; sourceTree = "<group>"; };
 		0CE32748283C0033000D7CB4 /* ReactNativeBaseDevelopDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseDevelopDebug.entitlements; path = ReactNativeBase/ReactNativeBaseDevelopDebug.entitlements; sourceTree = "<group>"; };
 		0CE32749283C0038000D7CB4 /* ReactNativeBaseRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ReactNativeBaseRelease.entitlements; path = ReactNativeBase/ReactNativeBaseRelease.entitlements; sourceTree = "<group>"; };
 		0CF563A12991640900ADEDFC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		0E245EF96FFA1DCC8ACD3A2F /* Pods-ReactNativeBase.stagingdebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBase.stagingdebug.xcconfig"; path = "Target Support Files/Pods-ReactNativeBase/Pods-ReactNativeBase.stagingdebug.xcconfig"; sourceTree = "<group>"; };
 		12FD8A5B2105E22A6896BBA0 /* Pods-ReactNativeBase-ReactNativeBaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBase-ReactNativeBaseTests.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeBase-ReactNativeBaseTests/Pods-ReactNativeBase-ReactNativeBaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* ReactNativeBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactNativeBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ReactNativeBase/AppDelegate.h; sourceTree = "<group>"; };
@@ -51,11 +55,13 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ReactNativeBase/main.m; sourceTree = "<group>"; };
 		197D83FD9964AFCA204053A2 /* Pods-ReactNativeBase-ReactNativeBaseTests.developdebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBase-ReactNativeBaseTests.developdebug.xcconfig"; path = "Target Support Files/Pods-ReactNativeBase-ReactNativeBaseTests/Pods-ReactNativeBase-ReactNativeBaseTests.developdebug.xcconfig"; sourceTree = "<group>"; };
 		27EC0D87EA5424AC0988B471 /* libPods-ReactNativeBase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeBase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FD143ED5BFFB13DA7364455 /* Pods-ReactNativeBase.stagingrelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBase.stagingrelease.xcconfig"; path = "Target Support Files/Pods-ReactNativeBase/Pods-ReactNativeBase.stagingrelease.xcconfig"; sourceTree = "<group>"; };
 		4073376F1E488F59679AE73D /* Pods-ReactNativeBase-ReactNativeBaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBase-ReactNativeBaseTests.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeBase-ReactNativeBaseTests/Pods-ReactNativeBase-ReactNativeBaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		57B094A5D53C49507D3AC55C /* Pods-ReactNativeBase-ReactNativeBaseTests.productdebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBase-ReactNativeBaseTests.productdebug.xcconfig"; path = "Target Support Files/Pods-ReactNativeBase-ReactNativeBaseTests/Pods-ReactNativeBase-ReactNativeBaseTests.productdebug.xcconfig"; sourceTree = "<group>"; };
 		632B716F61656A9192F8A933 /* Pods-ReactNativeBase-ReactNativeBaseTests.productrelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBase-ReactNativeBaseTests.productrelease.xcconfig"; path = "Target Support Files/Pods-ReactNativeBase-ReactNativeBaseTests/Pods-ReactNativeBase-ReactNativeBaseTests.productrelease.xcconfig"; sourceTree = "<group>"; };
 		78D316A6D2A216A24E3EE58B /* Pods-ReactNativeBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBase.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeBase/Pods-ReactNativeBase.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ReactNativeBase/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		906744E86C3755178360429A /* Pods-ReactNativeBase-ReactNativeBaseTests.stagingdebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBase-ReactNativeBaseTests.stagingdebug.xcconfig"; path = "Target Support Files/Pods-ReactNativeBase-ReactNativeBaseTests/Pods-ReactNativeBase-ReactNativeBaseTests.stagingdebug.xcconfig"; sourceTree = "<group>"; };
 		99B58D4E55F6403909FCC673 /* Pods-ReactNativeBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBase.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeBase/Pods-ReactNativeBase.release.xcconfig"; sourceTree = "<group>"; };
 		AC92E71905C3F055EFA66894 /* libPods-ReactNativeBase-ReactNativeBaseTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeBase-ReactNativeBaseTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A057D3553F48269B68DFE1 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Bold.ttf"; path = "../assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 		D5B4D051716940AB98510816 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Regular.ttf"; path = "../assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		D9FA5A3DECBD4F23910B461A /* Pods-ReactNativeBase-ReactNativeBaseTests.developrelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBase-ReactNativeBaseTests.developrelease.xcconfig"; path = "Target Support Files/Pods-ReactNativeBase-ReactNativeBaseTests/Pods-ReactNativeBase-ReactNativeBaseTests.developrelease.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F336AE3A93B6A6329AB8A156 /* Pods-ReactNativeBase-ReactNativeBaseTests.stagingrelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBase-ReactNativeBaseTests.stagingrelease.xcconfig"; path = "Target Support Files/Pods-ReactNativeBase-ReactNativeBaseTests/Pods-ReactNativeBase-ReactNativeBaseTests.stagingrelease.xcconfig"; sourceTree = "<group>"; };
 		F3A71C63056705ED50AABF6B /* Pods-ReactNativeBase.productdebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBase.productdebug.xcconfig"; path = "Target Support Files/Pods-ReactNativeBase/Pods-ReactNativeBase.productdebug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +127,10 @@
 				197D83FD9964AFCA204053A2 /* Pods-ReactNativeBase-ReactNativeBaseTests.developdebug.xcconfig */,
 				632B716F61656A9192F8A933 /* Pods-ReactNativeBase-ReactNativeBaseTests.productrelease.xcconfig */,
 				D9FA5A3DECBD4F23910B461A /* Pods-ReactNativeBase-ReactNativeBaseTests.developrelease.xcconfig */,
+				0E245EF96FFA1DCC8ACD3A2F /* Pods-ReactNativeBase.stagingdebug.xcconfig */,
+				2FD143ED5BFFB13DA7364455 /* Pods-ReactNativeBase.stagingrelease.xcconfig */,
+				906744E86C3755178360429A /* Pods-ReactNativeBase-ReactNativeBaseTests.stagingdebug.xcconfig */,
+				F336AE3A93B6A6329AB8A156 /* Pods-ReactNativeBase-ReactNativeBaseTests.stagingrelease.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -127,11 +138,14 @@
 		13B07FAE1A68108700A75B9A /* ReactNativeBase */ = {
 			isa = PBXGroup;
 			children = (
-				0C4D35152995C8CE00DEFFCD /* ReactNativeBaseProductRelease.entitlements */,
-				0C0685192992CAB10000A51B /* ReactNativeBaseProductDebug.entitlements */,
-				0CE32749283C0038000D7CB4 /* ReactNativeBaseRelease.entitlements */,
+				0CAE46582998C0DE008901EC /* ReactNativeBaseStagingDebug.entitlements */,
+				0CAE46592998C0DF008901EC /* ReactNativeBaseStagingRelease.entitlements */,
 				0CE32748283C0033000D7CB4 /* ReactNativeBaseDevelopDebug.entitlements */,
+				0CAE46572998C049008901EC /* ReactNativeBaseDevelopRelease.entitlements */,
+				0C0685192992CAB10000A51B /* ReactNativeBaseProductDebug.entitlements */,
+				0C4D35152995C8CE00DEFFCD /* ReactNativeBaseProductRelease.entitlements */,
 				0CE32747283C002A000D7CB4 /* ReactNativeBaseDebug.entitlements */,
+				0CE32749283C0038000D7CB4 /* ReactNativeBaseRelease.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -352,7 +366,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH_TO_GOOGLE_PLISTS=\"${PROJECT_DIR}/ReactNativeBase/AppConfig\"\n \ncase \"${CONFIGURATION}\" in\n \n   \"Debug\" | \"Release\" )\n        cp \"$PATH_TO_GOOGLE_PLISTS/Develop/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n \n   \"DevelopDebug\" | \"DevelopRelease\" )\n        cp \"$PATH_TO_GOOGLE_PLISTS/Develop/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n       \n   \"ProductDebug\" | \"ProductRelease\" )\n        cp \"$PATH_TO_GOOGLE_PLISTS/Product/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n \n    *)\n        ;;\nesac\n";
+			shellScript = "PATH_TO_GOOGLE_PLISTS=\"${PROJECT_DIR}/ReactNativeBase/AppConfig\"\n \ncase \"${CONFIGURATION}\" in\n \n   \"Debug\" | \"Release\" )\n        cp \"$PATH_TO_GOOGLE_PLISTS/Develop/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n \n   \"DevelopDebug\" | \"DevelopRelease\" )\n        cp \"$PATH_TO_GOOGLE_PLISTS/Develop/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n        \n   \"StagingDebug\" | \"StagingRelease\" )\n        cp \"$PATH_TO_GOOGLE_PLISTS/Staging/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n       \n   \"ProductDebug\" | \"ProductRelease\" )\n        cp \"$PATH_TO_GOOGLE_PLISTS/Product/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n \n    *)\n        ;;\nesac\n";
 		};
 		0DAECD70B8B89795CEBF87F0 /* [CP-User] [RNFB] Core Configuration */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1081,6 +1095,252 @@
 			};
 			name = ProductRelease;
 		};
+		0CAE46512998BC9F008901EC /* StagingDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CF563A12991640900ADEDFC /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = StagingDebug;
+		};
+		0CAE46522998BC9F008901EC /* StagingDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E245EF96FFA1DCC8ACD3A2F /* Pods-ReactNativeBase.stagingdebug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ReactNativeBase/ReactNativeBaseDevelopDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = ReactNativeBase/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APPLICATION_NAME)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kira.reactnativebase;
+				PRODUCT_NAME = ReactNativeBase;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = StagingDebug;
+		};
+		0CAE46532998BC9F008901EC /* StagingDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 906744E86C3755178360429A /* Pods-ReactNativeBase-ReactNativeBaseTests.stagingdebug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ReactNativeBaseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactNativeBase.app/ReactNativeBase";
+			};
+			name = StagingDebug;
+		};
+		0CAE46542998BCC5008901EC /* StagingRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CF563A12991640900ADEDFC /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = StagingRelease;
+		};
+		0CAE46552998BCC5008901EC /* StagingRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FD143ED5BFFB13DA7364455 /* Pods-ReactNativeBase.stagingrelease.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ReactNativeBase/ReactNativeBase.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = ReactNativeBase/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APPLICATION_NAME)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kira.reactnativebase;
+				PRODUCT_NAME = ReactNativeBase;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = StagingRelease;
+		};
+		0CAE46562998BCC5008901EC /* StagingRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F336AE3A93B6A6329AB8A156 /* Pods-ReactNativeBase-ReactNativeBaseTests.stagingrelease.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = ReactNativeBaseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactNativeBase.app/ReactNativeBase";
+			};
+			name = StagingRelease;
+		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 78D316A6D2A216A24E3EE58B /* Pods-ReactNativeBase.debug.xcconfig */;
@@ -1281,9 +1541,11 @@
 				00E356F61AD99517003FC87E /* Debug */,
 				0C0439FF27F1C31D00451CFD /* ProductDebug */,
 				0C0439F927F1C2EE00451CFD /* DevelopDebug */,
+				0CAE46532998BC9F008901EC /* StagingDebug */,
 				00E356F71AD99517003FC87E /* Release */,
 				0C043A0527F1C32C00451CFD /* ProductRelease */,
 				0C0439FC27F1C31400451CFD /* DevelopRelease */,
+				0CAE46562998BCC5008901EC /* StagingRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = DevelopRelease;
@@ -1294,9 +1556,11 @@
 				13B07F941A680F5B00A75B9A /* Debug */,
 				0C0439FE27F1C31D00451CFD /* ProductDebug */,
 				0C0439F827F1C2EE00451CFD /* DevelopDebug */,
+				0CAE46522998BC9F008901EC /* StagingDebug */,
 				13B07F951A680F5B00A75B9A /* Release */,
 				0C043A0427F1C32C00451CFD /* ProductRelease */,
 				0C0439FB27F1C31400451CFD /* DevelopRelease */,
+				0CAE46552998BCC5008901EC /* StagingRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = DevelopRelease;
@@ -1307,9 +1571,11 @@
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				0C0439FD27F1C31D00451CFD /* ProductDebug */,
 				0C0439F727F1C2EE00451CFD /* DevelopDebug */,
+				0CAE46512998BC9F008901EC /* StagingDebug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
 				0C043A0327F1C32C00451CFD /* ProductRelease */,
 				0C0439FA27F1C31400451CFD /* DevelopRelease */,
+				0CAE46542998BCC5008901EC /* StagingRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = DevelopRelease;

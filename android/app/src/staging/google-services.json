@@ -1,0 +1,154 @@
+{
+    "project_info": {
+        "project_number": "1090545170790",
+        "project_id": "reactnativebase-84dbe",
+        "storage_bucket": "reactnativebase-84dbe.appspot.com"
+    },
+    "client": [
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:1090545170790:android:1898d514e7fd8bf0ca70a7",
+                "android_client_info": {
+                    "package_name": "com.kira.reactnativebase"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "1090545170790-jjck3ik3k0snf7gsurv4osjssd22a82t.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyCn6-GnA5OcfGqN5VwEEvS4TGjmvsjHrkY"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "1090545170790-jjck3ik3k0snf7gsurv4osjssd22a82t.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "1090545170790-5u6bbofe1g7h1i5u67t1klmb345mhqcp.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.kira.reactnativebase"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:1090545170790:android:6d68029b81176a33ca70a7",
+                "android_client_info": {
+                    "package_name": "com.kira.reactnativebase.develop"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "1090545170790-jjck3ik3k0snf7gsurv4osjssd22a82t.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyCn6-GnA5OcfGqN5VwEEvS4TGjmvsjHrkY"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "1090545170790-jjck3ik3k0snf7gsurv4osjssd22a82t.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "1090545170790-5u6bbofe1g7h1i5u67t1klmb345mhqcp.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.kira.reactnativebase"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:1090545170790:android:52a264511e0d819bca70a7",
+                "android_client_info": {
+                    "package_name": "com.kira.reactnativebase.product"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "1090545170790-jjck3ik3k0snf7gsurv4osjssd22a82t.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyCn6-GnA5OcfGqN5VwEEvS4TGjmvsjHrkY"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "1090545170790-jjck3ik3k0snf7gsurv4osjssd22a82t.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "1090545170790-5u6bbofe1g7h1i5u67t1klmb345mhqcp.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.kira.reactnativebase"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:1090545170790:android:c7128e4559b84c49ca70a7",
+                "android_client_info": {
+                    "package_name": "com.kira.reactnativebase.staging"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "1090545170790-jjck3ik3k0snf7gsurv4osjssd22a82t.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyCn6-GnA5OcfGqN5VwEEvS4TGjmvsjHrkY"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "1090545170790-jjck3ik3k0snf7gsurv4osjssd22a82t.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "1090545170790-5u6bbofe1g7h1i5u67t1klmb345mhqcp.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.kira.reactnativebase"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "configuration_version": "1"
+}

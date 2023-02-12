@@ -9,7 +9,16 @@
         `APPLICATION_BUILD=1` <br/>
         `APPLICATION_ID=com.kira.reactnativebase.develop`
 
-    2. **.env.product**
+    2. **.env.staging**
+
+        `SERVER_HOST=demo6587384.mockable.io` <br/>
+        `ENCRYPTION_SECRET_KEY=akjsdhaksdn891723akjs` <br/>
+        `APPLICATION_NAME=RNBaseStaging` <br/>
+        `APPLICATION_VERSION=0.0.1` <br/>
+        `APPLICATION_BUILD=1` <br/>
+        `APPLICATION_ID=com.kira.reactnativebase.staging`
+
+    3. **.env.product**
 
         `SERVER_HOST=demo6587384.mockable.io` <br/>
         `ENCRYPTION_SECRET_KEY=akjsdhaksdn891723akjs` <br/>

@@ -86,10 +86,12 @@ project.ext.react = [
 apply from: "../../node_modules/react-native/react.gradle"
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 project.ext.envConfigFiles = [
-        productdebug: ".env.product",
-        productrelease: ".env.product",
         developdebug: ".env.develop",
         developrelease: ".env.develop",
+        stagingdebug: ".env.staging",
+        stagingrelease: ".env.staging",
+        productdebug: ".env.product",
+        productrelease: ".env.product",
 ]
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 /**
@@ -178,6 +180,7 @@ android {
     flavorDimensions "default"
     productFlavors {
         develop
+        staging
         product
     }
 
